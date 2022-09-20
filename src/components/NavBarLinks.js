@@ -8,7 +8,7 @@ function NavBarLinks () {
   
     return (
     <div>
-      <Link className='linkFont' underline="hover" to="/home">Home</Link>
+      <Link className='linkFont' underline="hover" to="/">Home</Link>
       <Link className='linkFont' underline="hover" to="/faculty">Faculty</Link>
       <Link className='linkFont' underline="hover" to="/student">Student</Link>
       <Link className='linkFont' underline="hover" to="/explore">Explore</Link>
