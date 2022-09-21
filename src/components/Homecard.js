@@ -11,29 +11,47 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import { CardActionArea } from '@material-ui/core'
 
 function Homecard({card}) {
   let bookId = (Object.keys(card)[0])
-  // let imageUrl = book[`${bookId}`] || 'https://media.istockphoto.com/vectors/loading-icon-vector-illustration-vector-id1335247217?k=20&m=1335247217&s=612x612&w=0&h=CQFY4NO0j2qc6kf4rTc0wTKYWL-9w5ldu-wF8D4oUBk='
-  // let title = book[`${bookId}`]
-  console.log(card[`${bookId}`]) //more stuff
+  console.log(bookId)
+  let imageUrl = card[`${bookId}`].cover.large || 'https://media.istockphoto.com/vectors/loading-icon-vector-illustration-vector-id1335247217?k=20&m=1335247217&s=612x612&w=0&h=CQFY4NO0j2qc6kf4rTc0wTKYWL-9w5ldu-wF8D4oUBk='
+  let title = card[`${bookId}`].title
+  let author = card[`${bookId}`].authors[0].name
+  
+  let publishDate = card[`${bookId}`].publish_date || 'Unknown'
+  let publishedBy = card[`${bookId}`].publishers[0].name
+  let publishedIn = card[`${bookId}`].publish_places[0].name || 'Unknown'
+  console.log(card[`${bookId}`].publish_places[0].name) //more stuff
+  
+  
+  function handleClick() {
+    console.log("I hear you")
+  }
+
   return(
-    <Card sx={{ maxWidth: 345}}> title here
+    <Card sx={{ maxWidth: 100}}>
+      <CardActionArea onClick={handleClick}>
       <CardMedia
         component="img"
-        height="300"
-        // image={imageUrl}
-        // alt={title}
+        height="100"
+        width="100"
+        image={imageUrl}
+        alt={title}
       />
       <CardContent>
       <Typography gutterBottom variant="h5" component="div">
-      {/* {title} */}
+        {title}
+      </Typography>
+      <Typography variant ="h6">
+        Written By: {author}
       </Typography>
       <Typography variant="body2" color="text.secondary">
-        Lizards are a widespread group of squamate reptiles, with over 6,000
-        species, ranging across all continents except Antarctica
+        {`Published in ${publishDate} by ${publishedBy} from ${publishedIn}`}
       </Typography>
       </CardContent>
+      </CardActionArea>
     </Card>
   )
 }
