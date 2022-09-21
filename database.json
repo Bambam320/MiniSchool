@@ -2799,6 +2799,12 @@
             "OL26491056M"
           ]
         },
+        "publish_places": [
+          {
+            "name": "New York City"
+          }
+        ],
+        "publish_date": "April 10, 1925",
         "publishers": [
           {
             "name": "Planet Ebook"
@@ -6611,6 +6617,11 @@
         "publishers": [
           {
             "name": "Popular Library"
+          }
+        ],
+        "publish_places": [
+          {
+            "name": "America"
           }
         ],
         "publish_date": "1962-03",
