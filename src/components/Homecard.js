@@ -22,6 +22,7 @@ function Homecard({card}) {
   
   let publishDate = card[`${bookId}`].publish_date || 'Unknown'
   let publishedBy = card[`${bookId}`].publishers[0].name
+  console.log('just before it happens')
   let publishedIn = card[`${bookId}`].publish_places[0].name || 'Unknown'
   console.log(card[`${bookId}`].publish_places[0].name) //more stuff
   

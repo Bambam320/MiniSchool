@@ -3183,6 +3183,11 @@
             "name": "Project Gutenberg"
           }
         ],
+        "publish_places": [
+          {
+            "name": "England"
+          }
+        ],
         "publish_date": "1994-01-01",
         "subjects": [
           {
