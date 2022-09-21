@@ -9344,5 +9344,19 @@
       },
       "id": 5
     }
+  ],
+  "login": [
+    {
+      "username": "reereer",
+      "password": "wererw",
+      "role": "student",
+      "id": 1
+    },
+    {
+      "username": "erferferf",
+      "password": "erferferf",
+      "role": "professor",
+      "id": 2
+    }
   ]
 }

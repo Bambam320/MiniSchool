@@ -1,6 +1,6 @@
 //functional imports
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 //material imports
 import Grid from "@material-ui/core/Grid";
@@ -20,6 +20,7 @@ function Login () {
     role: ''
   }
   const [formValues, setFormValues] = useState(defaultValues);
+  let navigate = useNavigate();
 
   const handleInputChange = (e) => {
     let name = e.target.name === 'role' ? 'role' : e.target.name
@@ -32,18 +33,15 @@ function Login () {
 
   const handleLoginSubmit = (event) => {
     event.preventDefault();
-
-    const post = {
-      method: 'POST',
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      },
-      body: JSON.stringify(formValues)
-    }
-    fetch(`http://localhost:3001/login`, post)
-    .then((r) => r.json())
-    .then((data) => console.log(data))
+    fetch(`http://localhost:3001/login`)
+      .then((r) => r.json())
+      .then((loginCredentials) =>{
+        let validCred = loginCredentials.find((loginCred) => (loginCred.username === formValues.username && (loginCred.password === formValues.password && (loginCred.role === formValues.role))))
+        switch (true) {
+          case validCred && validCred.role === 'professor' : navigate("/faculty")
+          case validCred && validCred.role === 'student' : navigate("/student")
+        }
+      })
     setFormValues(defaultValues)
   };
 
