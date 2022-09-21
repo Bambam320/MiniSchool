@@ -15,16 +15,14 @@ import { CardActionArea } from '@material-ui/core'
 
 function Homecard({card}) {
   let bookId = (Object.keys(card)[0])
-  console.log(bookId)
   let imageUrl = card[`${bookId}`].cover.large || 'https://media.istockphoto.com/vectors/loading-icon-vector-illustration-vector-id1335247217?k=20&m=1335247217&s=612x612&w=0&h=CQFY4NO0j2qc6kf4rTc0wTKYWL-9w5ldu-wF8D4oUBk='
   let title = card[`${bookId}`].title
   let author = card[`${bookId}`].authors[0].name
-  
   let publishDate = card[`${bookId}`].publish_date || 'Unknown'
   let publishedBy = card[`${bookId}`].publishers[0].name
-  console.log('just before it happens')
   let publishedIn = card[`${bookId}`].publish_places[0].name || 'Unknown'
-  console.log(card[`${bookId}`].publish_places[0].name) //more stuff
+  let excerpt = card.chapters.chapter_1.content.substr(0, 200)
+  console.log(card.chapters.chapter_1.content.substr(0, 200)) //more stuff
   
   
   function handleClick() {
@@ -48,8 +46,14 @@ function Homecard({card}) {
       <Typography variant ="h6">
         Written By: {author}
       </Typography>
-      <Typography variant="body2" color="text.secondary">
+      <Typography variant="body2" gutterBottom>
         {`Published in ${publishDate} by ${publishedBy} from ${publishedIn}`}
+      </Typography>
+      <Typography>
+        <strong>An excerpt from chapter 1 : </strong>{`${excerpt}...`}
+      </Typography>
+      <Typography>
+        {/* <a href={""} target="_blank">new link</a> */}
       </Typography>
       </CardContent>
       </CardActionArea>

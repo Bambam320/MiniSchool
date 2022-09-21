@@ -18,13 +18,12 @@ function Home () {
 
   useEffect(() => {
     const host = `http://localhost:3001/`
-    let rand = Math.ceil(Math.random() * 4) 
     let bookarray = []
     courses.forEach((course) => {
       fetch(`${host}${course}`)
       .then((r) => r.json())
       .then((data) => {
-        bookarray.push(data[rand])
+        bookarray.push(data[Math.ceil(Math.random() * 4)])
         if (bookarray.length === 5) {
           return setCardState(bookarray)
         }
