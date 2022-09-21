@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, createContext} from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css';
@@ -9,6 +9,18 @@ import Student from './components/Student';
 import Explore from './components/Explore';
 import Login from './components/Login';
 import Signup from './components/Signup';
+
+debugger
+const [state, setState] = useState('orange')
+return(
+<SomethingContext.Provider value={state, setState}/>
+  <Consumer //other components but they should require the context which has to imported>
+<SomethinContext.Provider/>
+)
+Consumer apps
+import { useContext } from 'react'
+import { SomethingContext } from 'SomethingContext location'
+const { state, setState } useContext(AppContent)
 
 const root = document.getElementById('root');
 ReactDOM.render(

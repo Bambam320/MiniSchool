@@ -16,6 +16,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
+import Snackbar from '@material-ui/core/Snackbar';
 
  const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
@@ -31,6 +32,11 @@ function Signup () {
 
   const [formValues, setFormValues] = useState(defaultValues)
   const [open, setOpen] = useState(false);
+  const [snackOpen, setSnackOpen] = useState(false);
+  const [freshestUserInfo, setFreshestUserInfo] = useState({
+    username: '',
+    role: ''
+  });
 
   const handleInputChange = (e) => {
     console.log(e)
@@ -60,9 +66,9 @@ function Signup () {
     }
     if (formValues.password === formValues.passwordAuth && formValues.password !== '') {
       fetch(`http://localhost:3001/login`, post)
-      .then((r) => r.json())
-      .then((data) => console.log(data))
-      return cleanUpForm()
+        .then((r) => r.json())
+        .then((data) => console.log(data))
+      return cleanUpForm(formValues.username, formValues.role)
     } else if (formValues.password !== formValues.passwordAuth) {
       return handleDialog()
     } else return null
@@ -72,95 +78,110 @@ function Signup () {
     setOpen(true)
   }
 
-  const cleanUpForm = () => {    
+  const cleanUpForm = (username, role) => {  
+    setSnackOpen(true)  
+    setFreshestUserInfo({
+      "username": username,
+      "role": role
+    })
     setFormValues(defaultValues)
+  }
+
+  const handleSnackClose = () => {
+    setSnackOpen(false)
   }
 
   return (
     <>
-    <form onSubmit={handleSignupSubmit}>
-      <Grid container  style={{marginTop: '40px'}} alignItems="center" justify="center" direction="column">
-        <strong>Sign Up Form</strong>
-        <Grid item>
-          <TextField
-            id="username-input"
-            name="username"
-            label="User Name"
-            type="text"
-            value={formValues.username}
-            onChange={handleInputChange}
-          />
-        </Grid>
-        <Grid item>
-          <TextField
-            id="outlined-password-input"
-            name="password"
-            label="Password"
-            type="password"
-            autoComplete="current-password"
-            value={formValues.password}
-            onChange={handleInputChange}
-          />
-        </Grid>
-        <Grid item>
-          <TextField
-            id="outlined-password-input-Auth"
-            name="passwordAuth"
-            label="Re-enter Password"
-            type="password"
-            autoComplete="current-password"
-            value={formValues.passwordAuth}
-            onChange={handleInputChange}
-          />
-        </Grid>
-        <Grid item style={{marginTop: '15px'}}>
-          <FormControl>
-            <FormLabel style={{marginLeft: '80px'}}>Role</FormLabel>
-            <RadioGroup
-              name="role"
-              value={formValues.role}
+      <form onSubmit={handleSignupSubmit}>
+        <Grid container  style={{marginTop: '40px'}} alignItems="center" justify="center" direction="column">
+          <strong>Sign Up Form</strong>
+          <Grid item>
+            <TextField
+              id="username-input"
+              name="username"
+              label="User Name"
+              type="text"
+              value={formValues.username}
               onChange={handleInputChange}
-              row
-            >
-              <FormControlLabel
-                key="Professor"
-                value="professor"
-                control={<Radio size="small" />}
-                label="Professor"
-              />
-              <FormControlLabel
-                key="Student"
-                value="student"
-                control={<Radio size="small" />}
-                label="Student"
-              />
-            </RadioGroup>
-          </FormControl>
-        </Grid >
-        <Grid style={{marginTop: '15px'}}>
-          <Button variant="contained" color="primary" type="submit">
-          Submit
-          </Button>
-        </Grid >
-      </Grid>
-    </form>
-    <Dialog
-      open={open}
-      TransitionComponent={Transition}
-      keepMounted
-      onClose={handleClose}
-      aria-describedby="alert-dialog-slide-description"
-    >
-      <DialogTitle>{"The passwords you entered do not match!"}</DialogTitle>
-      <DialogContent>
-        <DialogContentText id="alert-dialog-slide-description">
-          Re-enter your passwords and try again.
-        </DialogContentText>
-      </DialogContent>
-      <DialogActions>
-        <Button onClick={handleClose}>Acknowlegde</Button>
-      </DialogActions>
-    </Dialog>
+            />
+          </Grid>
+          <Grid item>
+            <TextField
+              id="outlined-password-input"
+              name="password"
+              label="Password"
+              type="password"
+              autoComplete="current-password"
+              value={formValues.password}
+              onChange={handleInputChange}
+            />
+          </Grid>
+          <Grid item>
+            <TextField
+              id="outlined-password-input-Auth"
+              name="passwordAuth"
+              label="Re-enter Password"
+              type="password"
+              autoComplete="current-password"
+              value={formValues.passwordAuth}
+              onChange={handleInputChange}
+            />
+          </Grid>
+          <Grid item style={{marginTop: '15px'}}>
+            <FormControl>
+              <FormLabel style={{marginLeft: '80px'}}>Role</FormLabel>
+              <RadioGroup
+                name="role"
+                value={formValues.role}
+                onChange={handleInputChange}
+                row
+              >
+                <FormControlLabel
+                  key="Professor"
+                  value="professor"
+                  control={<Radio size="small" />}
+                  label="Professor"
+                />
+                <FormControlLabel
+                  key="Student"
+                  value="student"
+                  control={<Radio size="small" />}
+                  label="Student"
+                />
+              </RadioGroup>
+            </FormControl>
+          </Grid >
+          <Grid style={{marginTop: '15px'}}>
+            <Button variant="contained" color="primary" type="submit">
+            Submit
+            </Button>
+          </Grid >
+        </Grid>
+      </form>
+      <Dialog
+        open={open}
+        TransitionComponent={Transition}
+        keepMounted
+        onClose={handleClose}
+        aria-describedby="alert-dialog-slide-description"
+      >
+        <DialogTitle>{"The passwords you entered do not match!"}</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-slide-description">
+            Re-enter your passwords and try again.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Acknowlegde</Button>
+        </DialogActions>
+      </Dialog>
+      <Snackbar
+        open={snackOpen}
+        autoHideDuration={5000}
+        onClose={handleSnackClose}
+        message={`Thank you for signing up, ${freshestUserInfo.username}. Enjoy ${freshestUserInfo.role === 'student' ? 'learning' : 'teaching'}!`}
+      />
     </> 
   )
 }

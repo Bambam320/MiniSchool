@@ -25,7 +25,7 @@ function Homecard({card}) {
   let publishedIn = card[`${bookId}`].publish_places[0].name || 'Unknown'
   let excerpt = card.chapters.chapter_1.content.substr(0, 200)
   let bookPreview = card[`${bookId}`].ebooks[0].preview_url
-  console.log(card[`${bookId}`].ebooks[0].preview_url) //more stuff
+  console.log(card[`${bookId}`].cover.large, bookId) //more stuff
   
   
   function handleClick() {
@@ -33,12 +33,21 @@ function Homecard({card}) {
   }
 
   return(
-    <Card sx={{ maxWidth: 100}} variant="outlined">
+    <Card 
+      style={{
+        marginBottom: '50px', 
+        maxWidth: '500px', 
+        borderStyle: "solid", 
+        borderWidth: '5px', 
+        borderColor: "#2AA624"
+        }} variant="outlined"
+      >
       <CardActionArea onClick={handleClick}>
       <CardMedia
+        style={{borderStyle: "solid", borderWidth: '5px', borderColor: "#dce04f"}} 
         component="img"
-        height="100"
-        width="100"
+        height="1000px"
+        width="600px"
         image={imageUrl}
         alt={title}
       />
@@ -57,6 +66,7 @@ function Homecard({card}) {
       </Typography>
       <Typography>
         <a href={bookPreview} target="_blank">Click here to view the eBook in a new window!</a>
+        <p> Click on the book to go to your account!</p>
       </Typography>
       </CardContent>
       </CardActionArea>

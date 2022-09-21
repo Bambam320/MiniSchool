@@ -5,7 +5,7 @@ import Homecard from './Homecard'
 //material imports
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box'
+import Box from '@material-ui/core/Box';
 
 function Home () {
   const [cards, setCards] = useState([])
@@ -37,7 +37,11 @@ function Home () {
   }
 
   const listBooks = cards.map((card, i) => {
-    return card ? <Homecard key={i} card={card} /> : <img src='https://media.istockphoto.com/vectors/loading-icon-vector-illustration-vector-id1335247217?k=20&m=1335247217&s=612x612&w=0&h=CQFY4NO0j2qc6kf4rTc0wTKYWL-9w5ldu-wF8D4oUBk=' ></img>
+    return (card ? 
+      <Grid item={4}>
+        <Homecard key={i} card={card} />
+      </Grid> 
+      : <img src='https://media.istockphoto.com/vectors/loading-icon-vector-illustration-vector-id1335247217?k=20&m=1335247217&s=612x612&w=0&h=CQFY4NO0j2qc6kf4rTc0wTKYWL-9w5ldu-wF8D4oUBk=' ></img>)
   })
 
   return (
@@ -47,10 +51,10 @@ function Home () {
           <img style={{height: '600px', width:'100%'}} src='/imgs/Main_Book_Photo.jpg' alt='main book image'></img>
         </Box>
       </Container>
-      <Container style={{marginTop: '15px'}}>
-        {/* <Grid container direction="row" justifyContent="center" alignItems="center"> */}
+      <Container style={{marginTop: '15px'}} >
+        <Grid container spacing={24} justifyContent="space-evenly" columnSpacing={24}>
           {listBooks}
-        {/* </Grid> */}
+        </Grid>
       </Container>
     </div>
   )

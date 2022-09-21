@@ -2752,7 +2752,7 @@
         "cover": {
           "small": "https://covers.openlibrary.org/b/id/11471392-S.jpg",
           "medium": "https://covers.openlibrary.org/b/id/11471392-M.jpg",
-          "large": "https://covers.openlibrary.org/b/id/11471392-L.jpg"
+          "large": "https://i0.wp.com/images-na.ssl-images-amazon.com/images/I/41fMw0rs7EL.jpg?w=640&ssl=1"
         }
       },
       "chapters": {
@@ -9357,6 +9357,62 @@
       "password": "erferferf",
       "role": "professor",
       "id": 2
+    },
+    {
+      "username": "Main Student",
+      "password": "4444",
+      "passwordAuth": "4444",
+      "role": "student",
+      "id": 3
+    },
+    {
+      "username": "bambam320",
+      "password": "444",
+      "passwordAuth": "444",
+      "role": "student",
+      "id": 4
+    },
+    {
+      "username": "bambam320",
+      "password": "2",
+      "passwordAuth": "2",
+      "role": "professor",
+      "id": 5
+    },
+    {
+      "username": "bambam320",
+      "password": "33",
+      "passwordAuth": "33",
+      "role": "professor",
+      "id": 6
+    },
+    {
+      "username": "bambam320",
+      "password": "fr",
+      "passwordAuth": "fr",
+      "role": "professor",
+      "id": 7
+    },
+    {
+      "username": "erferferf",
+      "password": "ff",
+      "passwordAuth": "ff",
+      "role": "student",
+      "id": 8
+    },
+    {
+      "username": "igor.mestechkin@gmail.com",
+      "password": "r",
+      "passwordAuth": "r",
+      "role": "professor",
+      "id": 9
+    },
+    {
+      "username": "reereer",
+      "password": "g",
+      "passwordAuth": "g",
+      "role": "student",
+      "id": 10
     }
   ]
 }

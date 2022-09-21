@@ -1,6 +1,7 @@
 //functional imports
 import React from 'react';
 import NavBarLinks from './NavBarLinks'
+import LoggedIn from "./LoggedIn"
 
 //material imports
 import AppBar from '@material-ui/core/AppBar';
@@ -33,6 +34,7 @@ function NavBar() {
           <Toolbar style={{color: '#659DBD'}}>
             <Typography variant="h6" component="div">
               <NavBarLinks />
+              <LoggedIn />
             </Typography>
           </Toolbar>
         </AppBar>
