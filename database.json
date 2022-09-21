@@ -9344,5 +9344,92 @@
       },
       "id": 5
     }
+  ],
+  "login": [
+    {
+      "username": "reereer",
+      "password": "wererw",
+      "role": "student",
+      "id": 1
+    },
+    {
+      "username": "erferferf",
+      "password": "erferferf",
+      "role": "professor",
+      "id": 2
+    },
+    {
+      "username": "erferferf",
+      "password": "erferferf",
+      "role": "professor",
+      "id": 3
+    },
+    {
+      "username": "bambam320",
+      "password": "rferf",
+      "role": "professor",
+      "id": 4
+    },
+    {
+      "username": "erer",
+      "password": "wfwfwf",
+      "role": "student",
+      "id": 5
+    },
+    {
+      "username": "",
+      "password": "",
+      "role": "",
+      "id": 6
+    },
+    {
+      "username": "Igor.M",
+      "password": "5555",
+      "passwordAuth": "5555",
+      "role": "professor",
+      "id": 7
+    },
+    {
+      "username": "Igor.M",
+      "password": "5555",
+      "passwordAuth": "5555",
+      "role": "student",
+      "id": 8
+    },
+    {
+      "username": "Igor.M",
+      "password": "5555",
+      "passwordAuth": "5555",
+      "role": "student",
+      "id": 9
+    },
+    {
+      "username": "Igor.M",
+      "password": "5555",
+      "passwordAuth": "5555",
+      "role": "student",
+      "id": 10
+    },
+    {
+      "username": "Igor.M",
+      "password": "5555",
+      "passwordAuth": "5555",
+      "role": "student",
+      "id": 11
+    },
+    {
+      "username": "Igor.M",
+      "password": "5555",
+      "passwordAuth": "5555",
+      "role": "student",
+      "id": 12
+    },
+    {
+      "username": "Igor.M",
+      "password": "5555",
+      "passwordAuth": "5555",
+      "role": "student",
+      "id": 13
+    }
   ]
 }

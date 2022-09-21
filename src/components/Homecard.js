@@ -1,5 +1,6 @@
 //functional imports
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 //material imports
 import Box from '@material-ui/core/Box';
@@ -10,10 +11,11 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
 import { CardActionArea } from '@material-ui/core'
 
 function Homecard({card}) {
+  let navigate = useNavigate();
+
   let bookId = (Object.keys(card)[0])
   let imageUrl = card[`${bookId}`].cover.large || 'https://media.istockphoto.com/vectors/loading-icon-vector-illustration-vector-id1335247217?k=20&m=1335247217&s=612x612&w=0&h=CQFY4NO0j2qc6kf4rTc0wTKYWL-9w5ldu-wF8D4oUBk='
   let title = card[`${bookId}`].title
@@ -22,15 +24,16 @@ function Homecard({card}) {
   let publishedBy = card[`${bookId}`].publishers[0].name
   let publishedIn = card[`${bookId}`].publish_places[0].name || 'Unknown'
   let excerpt = card.chapters.chapter_1.content.substr(0, 200)
-  console.log(card.chapters.chapter_1.content.substr(0, 200)) //more stuff
+  let bookPreview = card[`${bookId}`].ebooks[0].preview_url
+  console.log(card[`${bookId}`].ebooks[0].preview_url) //more stuff
   
   
   function handleClick() {
-    console.log("I hear you")
+    navigate("/login")
   }
 
   return(
-    <Card sx={{ maxWidth: 100}}>
+    <Card sx={{ maxWidth: 100}} variant="outlined">
       <CardActionArea onClick={handleClick}>
       <CardMedia
         component="img"
@@ -53,7 +56,7 @@ function Homecard({card}) {
         <strong>An excerpt from chapter 1 : </strong>{`${excerpt}...`}
       </Typography>
       <Typography>
-        {/* <a href={""} target="_blank">new link</a> */}
+        <a href={bookPreview} target="_blank">Click here to view the eBook in a new window!</a>
       </Typography>
       </CardContent>
       </CardActionArea>

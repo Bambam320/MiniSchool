@@ -5,6 +5,7 @@ import Homecard from './Homecard'
 //material imports
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box'
 
 function Home () {
   const [cards, setCards] = useState([])
@@ -42,9 +43,14 @@ function Home () {
   return (
     <div>
       <Container style={{marginTop: '15px'}}>
-        <Grid container justifyContent="space-around" alignItems="baseline">
+        <Box >
+          <img style={{height: '600px', width:'100%'}} src='/imgs/Main_Book_Photo.jpg' alt='main book image'></img>
+        </Box>
+      </Container>
+      <Container style={{marginTop: '15px'}}>
+        {/* <Grid container direction="row" justifyContent="center" alignItems="center"> */}
           {listBooks}
-        </Grid>
+        {/* </Grid> */}
       </Container>
     </div>
   )

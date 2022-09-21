@@ -8,6 +8,7 @@ import Faculty from './components/Faculty';
 import Student from './components/Student';
 import Explore from './components/Explore';
 import Login from './components/Login';
+import Signup from './components/Signup';
 
 const root = document.getElementById('root');
 ReactDOM.render(
@@ -20,6 +21,7 @@ ReactDOM.render(
           <Route path="student" element={<Student />} />
           <Route path="explore" element={<Explore />} />
           <Route path="login" element={<Login />} />
+          <Route path="signup" element={<Signup />} />
         </Route>
       </Routes>
     </React.StrictMode>

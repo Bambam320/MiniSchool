@@ -69,11 +69,6 @@ function App() {
   return (
     <div>
       <NavBar />
-      <Container style={{marginTop: '15px'}}>
-        <Box >
-          <img style={{height: '600px', width:'100%'}} src='/imgs/Main_Book_Photo.jpg' alt='main book image'></img>
-        </Box>
-       </Container>
         {/* <button onClick={postBook}> postBook </button><br></br>
          <button onClick={run}> run function </button> */}
       <Outlet />
