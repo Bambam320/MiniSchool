@@ -24,7 +24,7 @@ function LoggedIn () {
             display: 'inline-block',  
             marginRight: '10px',
             color: '#ffe6cc'}}
-          >{`Logged in as ${currentUser.username}`}</p>
+          >{`Logged in as ${currentUser.role.substr(0,1).toUpperCase()}${currentUser.role.substr(1)} ${currentUser.username}`}</p>
           <Button 
             onClick={handleLogout}
             style={{

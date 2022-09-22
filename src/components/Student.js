@@ -1,13 +1,16 @@
 //functional imports
-import React from 'react';
+import React, { useContext } from 'react';
+import { LoggedUserContext } from './LoggedUserContext'
 
 //material imports
 import Container from '@material-ui/core/Container'
 
 function Student () {
+  const { currentUser } = useContext(LoggedUserContext)
+
   return (
     <Container style={{marginTop: '25px'}}>
-      <p>FACULTY</p>
+      <h3>Please login to view this content!</h3>
     </Container>
   )
 }

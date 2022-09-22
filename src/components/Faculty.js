@@ -69,7 +69,7 @@ function Faculty() {
 
   return (
     <>
-    {currentUser ?
+    {currentUser && currentUser.role === 'professor' ?
     <Container style={{ marginTop: '80px' }}>
       <List
         component="nav"
@@ -84,7 +84,7 @@ function Faculty() {
         {listCourses}
       </List>
     </Container>
-    : <h3>Please login to view this content!</h3> }
+    : currentUser && currentUser.role === 'student' ? <h3>Get out of here, you're not a Teacher!</h3> : <h3>Please login to view this content!</h3> }
     </>
   )
 }

@@ -13,6 +13,7 @@ import RadioGroup from "@material-ui/core/RadioGroup";
 import Radio from "@material-ui/core/Radio";
 import Button from "@material-ui/core/Button";
 import Container from '@material-ui/core/Container';
+import Snackbar from '@material-ui/core/Snackbar';
 
 function Login() {
   const defaultValues = {
@@ -20,7 +21,7 @@ function Login() {
     password: '',
     role: ''
   }
-
+  const [snackOpen, setSnackOpen] = useState(false);
   const { currentUser, setCurrentUser } = useContext(LoggedUserContext);
   const [formValues, setFormValues] = useState(defaultValues);
   let navigate = useNavigate();
@@ -51,15 +52,22 @@ function Login() {
     setFormValues(defaultValues)
   };
 
+  //from handleLoginSubmit: sets user context with current login info and navigates to professor page
   const professorLogin = (user) => {
     setCurrentUser(user)
     navigate("/faculty")
   }
 
+  //from handleLoginSubmit: sets user context with current login info and navigates to student page
   const studentLogin = (user) => {
     setCurrentUser(user)
     navigate("/student")
   }
+
+    //from snackbar component: snack closer
+    const handleSnackClose = () => {
+      setSnackOpen(false)
+    }
 
   return (
     <>
@@ -124,6 +132,12 @@ function Login() {
         >Not a member yet? Sign Up Here
         </Link>
       </Container>
+      <Snackbar
+        open={snackOpen}
+        autoHideDuration={4500}
+        onClose={handleSnackClose}
+        message={`Thank you for signing up, ${freshestUserInfo.username}. Enjoy ${freshestUserInfo.role === 'student' ? 'learning' : 'teaching'}! You will be redirected to the login page, shortly.`}
+      />
     </>
   );
 }

@@ -15,6 +15,7 @@ import ChromeReaderModeIcon from '@material-ui/icons/ChromeReaderMode';
 
 
 function FacultyCourses({ course }) {
+  const [open, setOpen] = useState(false)
   console.log(course)
   const useStyles = makeStyles((theme) => ({
     root: {
@@ -59,10 +60,10 @@ function FacultyCourses({ course }) {
         <ListItemIcon>
           <CollectionsIcon />
         </ListItemIcon>
-        <ListItemText primary={`English ${course.substr(3)}`} />
-        {/* {open101 ? <ExpandLess /> : <ExpandMore />} */}
+        <ListItemText primary={`English Literature ${course.substr(3)}`} />
+        {open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
-      <Collapse in={true} timeout="auto" unmountOnExit>
+      <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           <ListItem button className={classes.nested}>
             <ListItemIcon>

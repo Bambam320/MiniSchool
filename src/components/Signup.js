@@ -1,5 +1,6 @@
 //functional imports
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 //material imports
 import Grid from "@material-ui/core/Grid";
@@ -18,11 +19,13 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
 import Snackbar from '@material-ui/core/Snackbar';
 
- const Transition = React.forwardRef(function Transition(props, ref) {
-    return <Slide direction="up" ref={ref} {...props} />;
-  });
+//Dialog transition component
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 function Signup () {
+  //default values for assigning to form state as needed
   const defaultValues = {
     username: '',
     password: '',
@@ -30,30 +33,34 @@ function Signup () {
     role: ''
   }
 
+  //assigning state for the form, dialog handler, snack handler, userinfo from submit
   const [formValues, setFormValues] = useState(defaultValues)
-  const [open, setOpen] = useState(false);
+  const [openDialog, setDialogOpen] = useState(false);
   const [snackOpen, setSnackOpen] = useState(false);
   const [freshestUserInfo, setFreshestUserInfo] = useState({
     username: '',
     role: ''
   });
 
+  //assigning the navigate hook for use
+  const navigate = useNavigate()
+
+  //form input change handler
   const handleInputChange = (e) => {
-    console.log(e)
     let name = e.target.name === 'role' ? 'role' : e.target.name
     let value = e.target.name === 'role' ? e.target.checked === true ? e.target.value : null : e.target.value
-    console.log('name', name)
-    console.log('value', value)
     setFormValues({
       ...formValues,
       [name]: value,
     });
   };
 
-  const handleClose = () => {
-    setOpen(false);
+  //from Dialog component: dialog state logic closer
+  const handleDialogClose = () => {
+    setDialogOpen(false);
   };
 
+  //post user login info if calid to server if valid, dialog open if invalid
   const handleSignupSubmit = (event) => {
     event.preventDefault();
     const post = {
@@ -67,17 +74,19 @@ function Signup () {
     if (formValues.password === formValues.passwordAuth && formValues.password !== '') {
       fetch(`http://localhost:3001/login`, post)
         .then((r) => r.json())
-        .then((data) => console.log(data))
+        .then((data) => (data))
       return cleanUpForm(formValues.username, formValues.role)
     } else if (formValues.password !== formValues.passwordAuth) {
       return handleDialog()
     } else return null
   };
 
+  //from handleSignupSubmit: dialog state logic opener
   const handleDialog = () => {
-    setOpen(true)
+    setDialogOpen(true)
   }
 
+  //valid submit snack opener, local userinfo state, form clearer, navigate function
   const cleanUpForm = (username, role) => {  
     setSnackOpen(true)  
     setFreshestUserInfo({
@@ -85,14 +94,22 @@ function Signup () {
       "role": role
     })
     setFormValues(defaultValues)
+    setTimeout(navigateToLogin, 5000);
   }
 
+  //from cleanUpForm: navigate to login
+  function navigateToLogin () {
+    navigate("/login")
+  }
+
+  //from snackbar component: snack closer
   const handleSnackClose = () => {
     setSnackOpen(false)
   }
 
   return (
     <>
+      {/* User info input form */}
       <form onSubmit={handleSignupSubmit}>
         <Grid container  style={{marginTop: '40px'}} alignItems="center" justify="center" direction="column">
           <strong>Sign Up Form</strong>
@@ -159,11 +176,12 @@ function Signup () {
           </Grid >
         </Grid>
       </form>
+      {/* Dialog for incorrect password */}
       <Dialog
-        open={open}
+        open={openDialog}
         TransitionComponent={Transition}
         keepMounted
-        onClose={handleClose}
+        onClose={handleDialogClose}
         aria-describedby="alert-dialog-slide-description"
       >
         <DialogTitle>{"The passwords you entered do not match!"}</DialogTitle>
@@ -173,14 +191,15 @@ function Signup () {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Acknowlegde</Button>
+          <Button onClick={handleSnackClose}>Acknowlegde</Button>
         </DialogActions>
       </Dialog>
+      {/* valid signup message */}
       <Snackbar
         open={snackOpen}
-        autoHideDuration={5000}
+        autoHideDuration={4500}
         onClose={handleSnackClose}
-        message={`Thank you for signing up, ${freshestUserInfo.username}. Enjoy ${freshestUserInfo.role === 'student' ? 'learning' : 'teaching'}!`}
+        message={`Thank you for signing up, ${freshestUserInfo.username}. Enjoy ${freshestUserInfo.role === 'student' ? 'learning' : 'teaching'}! You will be redirected to the login page, shortly.`}
       />
     </> 
   )
