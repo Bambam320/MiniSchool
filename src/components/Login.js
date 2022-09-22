@@ -42,7 +42,9 @@ function Login() {
         let validCred = loginCredentials.find((loginCred) => (loginCred.username === formValues.username && (loginCred.password === formValues.password && (loginCred.role === formValues.role))))
         switch (true) {
           case validCred && validCred.role === 'professor': professorLogin(validCred)
+          break;
           case validCred && validCred.role === 'student': studentLogin(validCred)
+          break;
           default: return null
         }
       })

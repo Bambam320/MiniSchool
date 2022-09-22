@@ -19,7 +19,7 @@ function App () {
 
   return (
     <LoggedUserContext.Provider value = {{currentUser, setCurrentUser}}>
-      <div style={{background: 'radial-gradient(#ffcc99, #d9b38c)'}}>
+      <div style={{background: 'radial-gradient(#ffe6cc, #fff2e6)'}}>
       <Routes>
         <Route path="/" element={<NavBar />}>
           <Route index element={<Home />} />

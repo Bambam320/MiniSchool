@@ -20,10 +20,15 @@ function LoggedIn () {
     <>
       {currentUser ? 
         <div>
-          {`Logged in as ${currentUser.username}`}
+          <p style={{
+            display: 'inline-block',  
+            marginRight: '10px',
+            color: '#ffe6cc'}}
+          >{`Logged in as ${currentUser.username}`}</p>
           <Button 
             onClick={handleLogout}
             style={{
+              display: 'inline-block',
               margin: '10px', 
               color: 'white',
               backgroundColor: 'darkblue'}}

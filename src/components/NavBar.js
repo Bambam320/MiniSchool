@@ -13,9 +13,6 @@ import Typography from '@material-ui/core/Typography';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 
-
-
-
 function NavBar() {
 
   function ElevationScroll(props) {

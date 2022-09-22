@@ -1,5 +1,9 @@
 //functional imports
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { LoggedUserContext } from './LoggedUserContext';
+
+//component imports
+import FacultyCourses from './FacultyCourses';
 
 //material imports
 import Container from '@material-ui/core/Container';
@@ -10,16 +14,26 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Collapse from '@material-ui/core/Collapse';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
-import SendIcon from '@material-ui/icons/Send';
+import CollectionsIcon from '@material-ui/icons/Collections';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
-import StarBorder from '@material-ui/icons/StarBorder';
-
+import ChromeReaderModeIcon from '@material-ui/icons/ChromeReaderMode';
 
 function Faculty() {
-  const [open, setOpen] = useState(true);
+  const { currentUser } = useContext(LoggedUserContext)
+  const [open101, setOpen101] = useState(true);
+  const [open202, setOpen202] = useState(true);
+  const [open303, setOpen303] = useState(true);
+  const [open404, setOpen404] = useState(true);
+  const [open505, setOpen505] = useState(true);
+
+  const courses = ["eng101", "eng202", "eng303", "eng404", "eng505"]
+
+  const listCourses = courses.map((course, i) => {
+    return (
+      <FacultyCourses key={i} course={course}/>
+    )
+  })
 
   const useStyles = makeStyles((theme) => ({
     root: {
@@ -31,56 +45,47 @@ function Faculty() {
       paddingLeft: theme.spacing(4),
     },
   }));
-  
   const classes = useStyles();
-    
-  const handleClick = () => {
-    setOpen(!open);
+
+  const handle101Click = () => {
+    setOpen101(!open101);
+  };
+
+  const handle202Click = () => {
+    setOpen202(!open202);
+  };
+
+  const handle303Click = () => {
+    setOpen303(!open303);
+  };
+
+  const handle404Click = () => {
+    setOpen404(!open404);
+  };
+
+  const handle505Click = () => {
+    setOpen505(!open505);
   };
 
   return (
-    <Container style={{ marginTop: '1px' }}>
+    <>
+    {currentUser ?
+    <Container style={{ marginTop: '80px' }}>
       <List
-      component="nav"
-      aria-labelledby="nested-list-subheader"
-      subheader={
-        <ListSubheader component="div" id="nested-list-subheader">
-          Nested List Items
-        </ListSubheader>
-      }
-      className={classes.root}
-    >
-      <ListItem button>
-        <ListItemIcon>
-          <SendIcon />
-        </ListItemIcon>
-        <ListItemText primary="Sent mail" />
-      </ListItem>
-      <ListItem button>
-        <ListItemIcon>
-          <DraftsIcon />
-        </ListItemIcon>
-        <ListItemText primary="Drafts" />
-      </ListItem>
-      <ListItem button onClick={handleClick}>
-        <ListItemIcon>
-          <InboxIcon />
-        </ListItemIcon>
-        <ListItemText primary="Inbox" />
-        {open ? <ExpandLess /> : <ExpandMore />}
-      </ListItem>
-      <Collapse in={open} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
-              <StarBorder />
-            </ListItemIcon>
-            <ListItemText primary="Starred" />
-          </ListItem>
-        </List>
-      </Collapse>
-    </List>
+        component="nav"
+        aria-labelledby="nested-list-subheader"
+        subheader={
+          <ListSubheader component="div" id="nested-list-subheader">
+            Your courses!
+          </ListSubheader>
+        }
+        className={classes.root}
+      >
+        {listCourses}
+      </List>
     </Container>
+    : <h3>Please login to view this content!</h3> }
+    </>
   )
 }
 
