@@ -6,6 +6,7 @@ import Homecard from './Homecard'
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
+import { Typography } from '@material-ui/core';
 
 function Home () {
   const [cards, setCards] = useState([])
@@ -47,6 +48,9 @@ function Home () {
   return (
     <div>
       <Container style={{marginTop: '25px'}}>
+        <Typography className='gradient-text' variant='h3' style={{fontWeight: '800', textAlign: 'center', marginBottom: '25px'}}>
+          Welcome To The Flatiron Project University
+        </Typography>
         <Box >
           <img style={{height: '600px', width:'100%'}} src='/imgs/Main_Book_Photo.jpg' alt='main book image'></img>
         </Box>

@@ -12,12 +12,14 @@ import Explore from './Explore';
 import Login from './Login';
 import Signup from './Signup';
 import NavBar from './NavBar';
+import { Gradient } from '@material-ui/icons';
 
 function App () {
   const [currentUser, setCurrentUser] = useState('')
 
   return (
     <LoggedUserContext.Provider value = {{currentUser, setCurrentUser}}>
+      <div style={{background: 'radial-gradient(#ffcc99, #d9b38c)'}}>
       <Routes>
         <Route path="/" element={<NavBar />}>
           <Route index element={<Home />} />
@@ -28,6 +30,7 @@ function App () {
           <Route path="signup" element={<Signup />} />
         </Route>
       </Routes>
+      </div>
     </LoggedUserContext.Provider>
   )        
 }

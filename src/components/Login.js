@@ -43,6 +43,7 @@ function Login() {
         switch (true) {
           case validCred && validCred.role === 'professor': professorLogin(validCred)
           case validCred && validCred.role === 'student': studentLogin(validCred)
+          default: return null
         }
       })
     setFormValues(defaultValues)

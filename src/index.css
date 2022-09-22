@@ -19,3 +19,9 @@ code {
   color: lightgreen;
   text-shadow: 4px 4px 4px #000000;
 }
+
+.gradient-text {
+  background-image: linear-gradient(60deg, #2453A6, #2d7b30);
+  background-clip: text;
+  color: transparent;
+}
