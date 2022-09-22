@@ -46,7 +46,7 @@ function Home () {
 
   return (
     <div>
-      <Container style={{marginTop: '15px'}}>
+      <Container style={{marginTop: '25px'}}>
         <Box >
           <img style={{height: '600px', width:'100%'}} src='/imgs/Main_Book_Photo.jpg' alt='main book image'></img>
         </Box>

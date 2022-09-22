@@ -25,7 +25,7 @@ function Homecard({card}) {
   let publishedIn = card[`${bookId}`].publish_places[0].name || 'Unknown'
   let excerpt = card.chapters.chapter_1.content.substr(0, 200)
   let bookPreview = card[`${bookId}`].ebooks[0].preview_url
-  console.log(card[`${bookId}`].cover.large, bookId) //more stuff
+  // console.log(card[`${bookId}`].cover.large, bookId) //more stuff
   
   
   function handleClick() {

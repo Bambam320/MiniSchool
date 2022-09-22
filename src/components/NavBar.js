@@ -1,7 +1,10 @@
 //functional imports
 import React from 'react';
-import NavBarLinks from './NavBarLinks'
-import LoggedIn from "./LoggedIn"
+import { Outlet } from 'react-router-dom';
+
+//component imports
+import NavBarLinks from './NavBarLinks';
+import LoggedIn from "./LoggedIn";
 
 //material imports
 import AppBar from '@material-ui/core/AppBar';
@@ -40,6 +43,7 @@ function NavBar() {
         </AppBar>
       </ElevationScroll>
       <Toolbar />
+      <Outlet />
     </React.Fragment>
   );
 }
