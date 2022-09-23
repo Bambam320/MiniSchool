@@ -16,7 +16,8 @@ import ChromeReaderModeIcon from '@material-ui/icons/ChromeReaderMode';
 
 function FacultyCourses({ course }) {
   const [open, setOpen] = useState(false)
-  console.log(course)
+  const [courseMaterial, setCourseMaterial] = useState([])
+  // console.log(course)
   const useStyles = makeStyles((theme) => ({
     root: {
       width: '100%',
@@ -29,11 +30,40 @@ function FacultyCourses({ course }) {
   }));
   const classes = useStyles();
 
-  const listCourseMaterials = () => {
-    
+  useEffect(() => {
+    const host = `http://localhost:3001/`
+    fetch(`${host}${course}`)
+      .then((r) => r.json())
+      .then((data) => setCourseState(data))
+  }, [])
+
+  function setCourseState(readingAssignments) {
+    setCourseMaterial(readingAssignments)
   }
 
+  const listCourseMaterials = courseMaterial.map((book) => {
+    let bookId = (Object.keys(book)[0])
+    let imageUrl = book[`${bookId}`].cover.large || 'https://media.istockphoto.com/vectors/loading-icon-vector-illustration-vector-id1335247217?k=20&m=1335247217&s=612x612&w=0&h=CQFY4NO0j2qc6kf4rTc0wTKYWL-9w5ldu-wF8D4oUBk='
+    let title = book[`${bookId}`].title
+    let author = book[`${bookId}`].authors[0].name
+    let publishDate = book[`${bookId}`].publish_date || 'Unknown'
+    let publishedBy = book[`${bookId}`].publishers[0].name
+    let publishedIn = book[`${bookId}`].publish_places[0].name || 'Unknown'
+    let excerpt = book.chapters.chapter_1.content.substr(0, 200)
+    let bookPreview = book[`${bookId}`].ebooks[0].preview_url
+    
+    return (
+      <Collapse 
+        in={open} 
+        timeout="auto" 
+        unmountOnExit>
+          <FacultyCoursesExpanded />
+      </Collapse>
+    )
+  })
+
   const handleClick = () => {
+    console.log('this is handleClick')
     setOpen(!open)
   }
 
@@ -46,7 +76,7 @@ function FacultyCourses({ course }) {
         <ListItemText primary={`English Literature ${course.substr(3)}`} />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
-      {/* {listCourseMaterials} */}
+      {listCourseMaterials}
     </>
   )
 };

@@ -21,11 +21,6 @@ import ChromeReaderModeIcon from '@material-ui/icons/ChromeReaderMode';
 
 function Faculty() {
   const { currentUser } = useContext(LoggedUserContext)
-  const [open101, setOpen101] = useState(true);
-  const [open202, setOpen202] = useState(true);
-  const [open303, setOpen303] = useState(true);
-  const [open404, setOpen404] = useState(true);
-  const [open505, setOpen505] = useState(true);
 
   const courses = ["eng101", "eng202", "eng303", "eng404", "eng505"]
 
@@ -46,26 +41,6 @@ function Faculty() {
     },
   }));
   const classes = useStyles();
-
-  const handle101Click = () => {
-    setOpen101(!open101);
-  };
-
-  const handle202Click = () => {
-    setOpen202(!open202);
-  };
-
-  const handle303Click = () => {
-    setOpen303(!open303);
-  };
-
-  const handle404Click = () => {
-    setOpen404(!open404);
-  };
-
-  const handle505Click = () => {
-    setOpen505(!open505);
-  };
 
   return (
     <>

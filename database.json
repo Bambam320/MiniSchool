@@ -6558,11 +6558,25 @@
             "name": "Penguin India"
           }
         ],
+        "publish_places": [
+          {
+            "name": "America"
+          }
+        ],
         "publish_date": "2007",
         "subjects": [
           {
             "name": "Romance literature",
             "url": "https://openlibrary.org/subjects/romance_literature"
+          }
+        ],
+                "ebooks": [
+          {
+            "preview_url": "https://archive.org/details/tokillmockingbir0000unse_b3c1",
+            "availability": "borrow",
+            "formats": {},
+            "borrow_url": "https://openlibrary.org/books/OL37027591M/To_Kill_a_Mockingbird/borrow",
+            "checkedout": false
           }
         ],
         "cover": {
