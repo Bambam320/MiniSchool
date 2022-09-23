@@ -27,7 +27,7 @@ function Home () {
       .then((data) => {
         bookarray.push(data[Math.ceil(Math.random() * 4)])
         if (bookarray.length === 5) {
-          return setCardState(bookarray)
+          return setCardState(bookarray, course)
         }
       })
     })
@@ -47,7 +47,7 @@ function Home () {
 
   return (
     <div>
-      <Container style={{marginTop: '25px'}}>
+      <Container style={{marginTop: '80px'}}>
         <Typography className='gradient-text' variant='h3' style={{fontWeight: '800', textAlign: 'center', marginBottom: '25px'}}>
           Welcome To The Flatiron Project University
         </Typography>

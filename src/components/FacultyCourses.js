@@ -29,29 +29,12 @@ function FacultyCourses({ course }) {
   }));
   const classes = useStyles();
 
-  // useEffect(() => {
-  //   const host = `http://localhost:3001/`
-  //   let bookarray = []
-  //   fetch()
-  // })
-
-  // useEffect(() => {
+  const listCourseMaterials = () => {
     
-    
-  //   courses.forEach((course) => {
-  //     fetch(`${host}${course}`)
-  //     .then((r) => r.json())
-  //     .then((data) => {
-  //       bookarray.push(data[Math.ceil(Math.random() * 4)])
-  //       if (bookarray.length === 5) {
-  //         return setCardState(bookarray)
-  //       }
-  //     })
-  //   })
-  // }, [])
+  }
 
   const handleClick = () => {
-    return null
+    setOpen(!open)
   }
 
   return (
@@ -63,16 +46,7 @@ function FacultyCourses({ course }) {
         <ListItemText primary={`English Literature ${course.substr(3)}`} />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
-      <Collapse in={open} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
-              <ChromeReaderModeIcon />
-            </ListItemIcon>
-            <ListItemText primary="Starred" />
-          </ListItem>
-        </List>
-        </Collapse>
+      {/* {listCourseMaterials} */}
     </>
   )
 };

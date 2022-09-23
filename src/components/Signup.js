@@ -18,6 +18,7 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
 import Snackbar from '@material-ui/core/Snackbar';
+import Container from '@material-ui/core/Container';
 
 //Dialog transition component
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -35,7 +36,7 @@ function Signup () {
 
   //assigning state for the form, dialog handler, snack handler, userinfo from submit
   const [formValues, setFormValues] = useState(defaultValues)
-  const [openDialog, setDialogOpen] = useState(false);
+  const [openDialog, setOpenDialog] = useState(false);
   const [snackOpen, setSnackOpen] = useState(false);
   const [freshestUserInfo, setFreshestUserInfo] = useState({
     username: '',
@@ -53,11 +54,6 @@ function Signup () {
       ...formValues,
       [name]: value,
     });
-  };
-
-  //from Dialog component: dialog state logic closer
-  const handleDialogClose = () => {
-    setDialogOpen(false);
   };
 
   //post user login info if calid to server if valid, dialog open if invalid
@@ -83,8 +79,14 @@ function Signup () {
 
   //from handleSignupSubmit: dialog state logic opener
   const handleDialog = () => {
-    setDialogOpen(true)
+    setOpenDialog(true)
   }
+
+  //from Dialog component: dialog state logic closer
+  const handleDialogClose = () => {
+    console.log('i want to close this')
+    setOpenDialog(false);
+  };
 
   //valid submit snack opener, local userinfo state, form clearer, navigate function
   const cleanUpForm = (username, role) => {  
@@ -110,97 +112,99 @@ function Signup () {
   return (
     <>
       {/* User info input form */}
-      <form onSubmit={handleSignupSubmit}>
-        <Grid container  style={{marginTop: '40px'}} alignItems="center" justify="center" direction="column">
-          <strong>Sign Up Form</strong>
-          <Grid item>
-            <TextField
-              id="username-input"
-              name="username"
-              label="User Name"
-              type="text"
-              value={formValues.username}
-              onChange={handleInputChange}
-            />
-          </Grid>
-          <Grid item>
-            <TextField
-              id="outlined-password-input"
-              name="password"
-              label="Password"
-              type="password"
-              autoComplete="current-password"
-              value={formValues.password}
-              onChange={handleInputChange}
-            />
-          </Grid>
-          <Grid item>
-            <TextField
-              id="outlined-password-input-Auth"
-              name="passwordAuth"
-              label="Re-enter Password"
-              type="password"
-              autoComplete="current-password"
-              value={formValues.passwordAuth}
-              onChange={handleInputChange}
-            />
-          </Grid>
-          <Grid item style={{marginTop: '15px'}}>
-            <FormControl>
-              <FormLabel style={{marginLeft: '80px'}}>Role</FormLabel>
-              <RadioGroup
-                name="role"
-                value={formValues.role}
+      <Container style={{ marginTop: '100px' }}>
+        <form onSubmit={handleSignupSubmit}>
+          <Grid container  style={{marginTop: '40px'}} alignItems="center" justify="center" direction="column">
+            <strong>Sign Up Form</strong>
+            <Grid item>
+              <TextField
+                id="username-input"
+                name="username"
+                label="User Name"
+                type="text"
+                value={formValues.username}
                 onChange={handleInputChange}
-                row
-              >
-                <FormControlLabel
-                  key="Professor"
-                  value="professor"
-                  control={<Radio size="small" />}
-                  label="Professor"
-                />
-                <FormControlLabel
-                  key="Student"
-                  value="student"
-                  control={<Radio size="small" />}
-                  label="Student"
-                />
-              </RadioGroup>
-            </FormControl>
-          </Grid >
-          <Grid style={{marginTop: '15px'}}>
-            <Button variant="contained" color="primary" type="submit">
-            Submit
-            </Button>
-          </Grid >
-        </Grid>
-      </form>
-      {/* Dialog for incorrect password */}
-      <Dialog
-        open={openDialog}
-        TransitionComponent={Transition}
-        keepMounted
-        onClose={handleDialogClose}
-        aria-describedby="alert-dialog-slide-description"
-      >
-        <DialogTitle>{"The passwords you entered do not match!"}</DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-slide-description">
-            Re-enter your passwords and try again.
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleSnackClose}>Acknowlegde</Button>
-        </DialogActions>
-      </Dialog>
-      {/* valid signup message */}
-      <Snackbar
-        open={snackOpen}
-        autoHideDuration={4500}
-        onClose={handleSnackClose}
-        message={`Thank you for signing up, ${freshestUserInfo.username}. Enjoy ${freshestUserInfo.role === 'student' ? 'learning' : 'teaching'}! You will be redirected to the login page, shortly.`}
-      />
+              />
+            </Grid>
+            <Grid item>
+              <TextField
+                id="outlined-password-input"
+                name="password"
+                label="Password"
+                type="password"
+                autoComplete="current-password"
+                value={formValues.password}
+                onChange={handleInputChange}
+              />
+            </Grid>
+            <Grid item>
+              <TextField
+                id="outlined-password-input-Auth"
+                name="passwordAuth"
+                label="Re-enter Password"
+                type="password"
+                autoComplete="current-password"
+                value={formValues.passwordAuth}
+                onChange={handleInputChange}
+              />
+            </Grid>
+            <Grid item style={{marginTop: '15px'}}>
+              <FormControl>
+                <FormLabel style={{marginLeft: '80px'}}>Role</FormLabel>
+                <RadioGroup
+                  name="role"
+                  value={formValues.role}
+                  onChange={handleInputChange}
+                  row
+                >
+                  <FormControlLabel
+                    key="Professor"
+                    value="professor"
+                    control={<Radio size="small" />}
+                    label="Professor"
+                  />
+                  <FormControlLabel
+                    key="Student"
+                    value="student"
+                    control={<Radio size="small" />}
+                    label="Student"
+                  />
+                </RadioGroup>
+              </FormControl>
+            </Grid >
+            <Grid style={{marginTop: '15px'}}>
+              <Button variant="contained" color="primary" type="submit">
+              Submit
+              </Button>
+            </Grid >
+          </Grid>
+        </form>
+        {/* Dialog for incorrect password */}
+        <Dialog
+          open={openDialog}
+          TransitionComponent={Transition}
+          keepMounted
+          onClose={handleDialogClose}
+          aria-describedby="alert-dialog-slide-description"
+        >
+          <DialogTitle>{"The passwords you entered do not match!"}</DialogTitle>
+          <DialogContent>
+            <DialogContentText id="alert-dialog-slide-description">
+              Re-enter your passwords and try again.
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleDialogClose}>Acknowlegde</Button>
+          </DialogActions>
+        </Dialog>
+        {/* valid signup message */}
+        <Snackbar
+          open={snackOpen}
+          autoHideDuration={4500}
+          onClose={handleSnackClose}
+          message={`Thank you for signing up, ${freshestUserInfo.username}. Enjoy ${freshestUserInfo.role === 'student' ? 'learning' : 'teaching'}! You will be redirected to the login page, shortly.`}
+        />
+      </Container>
     </> 
   )
 }

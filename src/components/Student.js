@@ -9,7 +9,7 @@ function Student () {
   const { currentUser } = useContext(LoggedUserContext)
 
   return (
-    <Container style={{marginTop: '25px'}}>
+    <Container style={{marginTop: '100px'}}>
       <h3>Please login to view this content!</h3>
     </Container>
   )

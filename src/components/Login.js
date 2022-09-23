@@ -21,8 +21,13 @@ function Login() {
     password: '',
     role: ''
   }
+  const [freshestUserInfo, setFreshestUserInfo] = useState({
+    username: '',
+    role: ''
+  });
   const [snackOpen, setSnackOpen] = useState(false);
-  const { currentUser, setCurrentUser } = useContext(LoggedUserContext);
+  const [errorSnackOpen, setErrorSnackOpen] = useState(false);
+  const { setCurrentUser } = useContext(LoggedUserContext);
   const [formValues, setFormValues] = useState(defaultValues);
   let navigate = useNavigate();
 
@@ -35,6 +40,7 @@ function Login() {
     });
   };
 
+  //gets the current users in the server and matches the login information, then calls a function per role
   const handleLoginSubmit = (event) => {
     event.preventDefault();
     fetch(`http://localhost:3001/login`)
@@ -42,9 +48,11 @@ function Login() {
       .then((loginCredentials) => {
         let validCred = loginCredentials.find((loginCred) => (loginCred.username === formValues.username && (loginCred.password === formValues.password && (loginCred.role === formValues.role))))
         switch (true) {
-          case validCred && validCred.role === 'professor': professorLogin(validCred)
+          case validCred && validCred.role === 'professor': professorLogin(validCred) 
           break;
           case validCred && validCred.role === 'student': studentLogin(validCred)
+          break;
+          case validCred === undefined : falseLogin()
           break;
           default: return null
         }
@@ -54,25 +62,54 @@ function Login() {
 
   //from handleLoginSubmit: sets user context with current login info and navigates to professor page
   const professorLogin = (user) => {
+    console.log(user)
+    setSnackOpen(true)
     setCurrentUser(user)
+    setFreshestUserInfo({
+      "username": user.username,
+      "role": user.role
+    })
+    setTimeout(navigateToFacultyPage, 5000)
+  }
+
+  function navigateToFacultyPage (role) {
     navigate("/faculty")
   }
 
   //from handleLoginSubmit: sets user context with current login info and navigates to student page
   const studentLogin = (user) => {
+    console.log(user)
+    setSnackOpen(true)
     setCurrentUser(user)
-    navigate("/student")
+    setFreshestUserInfo({
+      "username": user.username,
+      "role": user.role
+    })
+    setTimeout(navigateToStudentPage, 5000)
   }
 
-    //from snackbar component: snack closer
-    const handleSnackClose = () => {
-      setSnackOpen(false)
-    }
+  function navigateToStudentPage() {
+    navigate('/student')
+  }
+
+  function falseLogin() {
+    console.log('this was a false login')
+    setErrorSnackOpen(true)
+  }
+
+  //from snackbar component: snack closer
+  const handleSnackClose = () => {
+    setSnackOpen(false)
+  }
+
+  const handleErrorSnackClose = () => {
+    setErrorSnackOpen(false)
+  }
 
   return (
     <>
       <form onSubmit={handleLoginSubmit}>
-        <Grid container style={{ marginTop: '15px' }} alignItems="center" justify="center" direction="column"><strong>Login Form</strong>
+        <Grid container style={{ marginTop: '100px' }} alignItems="center" justify="center" direction="column"><strong>Login Form</strong>
           <Grid item>
             <TextField
               id="username-input"
@@ -134,9 +171,15 @@ function Login() {
       </Container>
       <Snackbar
         open={snackOpen}
-        autoHideDuration={4500}
+        autoHideDuration={4000}
         onClose={handleSnackClose}
-        message={`Thank you for signing up, ${freshestUserInfo.username}. Enjoy ${freshestUserInfo.role === 'student' ? 'learning' : 'teaching'}! You will be redirected to the login page, shortly.`}
+        message={`Login Successful ${freshestUserInfo.role === 'student' ? 'Pupil' : 'Professor'}, ${freshestUserInfo.username}. You will be redirected to your course material page, shortly.`}
+      />
+      <Snackbar
+        open={errorSnackOpen}
+        autoHideDuration={4000}
+        onClose={handleErrorSnackClose}
+        message={`Your credentials did not match a current user. NO SOUP FOR YOU!`}
       />
     </>
   );

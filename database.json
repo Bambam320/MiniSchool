@@ -9511,6 +9511,34 @@
       "passwordAuth": "asdasdasd",
       "role": "student",
       "id": 24
+    },
+    {
+      "username": "bambam320",
+      "password": "p",
+      "passwordAuth": "p",
+      "role": "professor",
+      "id": 25
+    },
+    {
+      "username": "bambam320",
+      "password": "s",
+      "passwordAuth": "s",
+      "role": "student",
+      "id": 26
+    },
+    {
+      "username": "bambam320",
+      "password": "22",
+      "passwordAuth": "22",
+      "role": "professor",
+      "id": 27
+    },
+    {
+      "username": "bambam320",
+      "password": "gg",
+      "passwordAuth": "gg",
+      "role": "student",
+      "id": 28
     }
   ]
 }
