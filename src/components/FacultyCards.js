@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 
 //material imports
 import TextField from '@material-ui/core/TextField';
+import TextareaAutosize from '@material-ui/core/TextareaAutosize'
 import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -12,9 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
 function FacultyCards() {
-  const [formValues, setFormValues] = useState({
-    question: ''
-  })
+  const [formValues, setFormValues] = useState('')
   const [book, setBook] = useState({})
   const [bookValid, setBookValid] = useState(false)
   const params = useParams()
@@ -44,22 +43,42 @@ function FacultyCards() {
   // console.log('title', book[`${bookId}`].title)
 
   function handleInputChange (e) {
-    console.log(e)
+    setFormValues(e.target.value)
   }
 
   function handleSubmit (e) {
     e.preventDefault()
+    const post = {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(formValues)
+      }
+        if (formValues.password === formValues.passwordAuth && formValues.password !== '') {
+          fetch(`http://localhost:3001/login`, post)
+            .then((r) => r.json())
+            .then((data) => (data))
+          return cleanUpForm(formValues.username, formValues.role)
+        } else if (formValues.password !== formValues.passwordAuth) {
+          return handleDialog()
+        } else return null
+      };
+    }
   }
 
-  const title = () => {
-    if (bookValid) {
-      return book[`${bookId}`].title
-    } else return 'Loading'
-  }
-
-  const author = () => {
-    if (bookValid) {
-      return book[`${bookId}`].authors[0].name
+  const info = (props) => {
+    switch (true) {
+      case bookValid && props === 1 : return book[`${bookId}`].title
+      break;
+      case bookValid && props === 2 : return book[`${bookId}`].authors[0].name
+      break;
+      case bookValid && props === 3 : return book[`${bookId}`].number_of_pages
+      break;
+      case bookValid && props === 4 : return book[`${bookId}`].publish_date
+      break;
+      default: return 'Loading...'
     }
   }
 
@@ -76,27 +95,29 @@ function FacultyCards() {
       >
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Title: {title()}
+            Title: {info(1)}
           </Typography>
           <Typography variant="h6">
-            Written By: {author()}
+            Written By: {info(2)}
           </Typography>
           <Typography variant="body2" gutterBottom>
-            {/* Pages: {book[`${bookId}`].number_of_pages} || Published: {book[`${bookId}`].publish_date} */}
+            Pages: {info(3)} || Published: {info(4)}
           </Typography>
           <Typography>
             Assign questions below.
           </Typography>
           <form onSubmit={handleSubmit}>
-          <TextField
-            id="question-input"
-            name="username"
-            label="User Name"
-            type="text"
-            value={formValues.question}
+          <TextareaAutosize
+          style={{width: 460}}
+            maxRows={20}
+            aria-label="maximum height"
+            placeholder="Maximum 4 rows"
+            defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua."
+            value={formValues}
             onChange={handleInputChange}
           />
-          <Button>Assign Question to current book!</Button>
+          <Button style={{backgroundColor: 'lightgreen'}}>Assign Question to current book!</Button>
           </form>
         </CardContent>
       </Card>
