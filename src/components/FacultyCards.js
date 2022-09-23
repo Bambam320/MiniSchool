@@ -5,7 +5,6 @@ import { useParams } from 'react-router-dom';
 
 //material imports
 import TextField from '@material-ui/core/TextField';
-import Form from '@material-ui/core/Form';
 import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -39,6 +38,10 @@ function FacultyCards() {
     console.log(e)
   }
 
+  function handleSubmit (e) {
+    e.preventDefault()
+  }
+
   return (
     <Container style={{ marginTop: '75px', marginBottom: '75px' }}>
       <Card
@@ -63,7 +66,7 @@ function FacultyCards() {
           <Typography>
             Assign questions below.
           </Typography>
-          <Form>
+          <form onSubmit={handleSubmit}>
           <TextField
             id="question-input"
             name="username"
@@ -73,7 +76,7 @@ function FacultyCards() {
             onChange={handleInputChange}
           />
           <Button>Assign Question to current book!</Button>
-          </Form>
+          </form>
         </CardContent>
       </Card>
     </Container>
