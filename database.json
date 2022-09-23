@@ -6570,7 +6570,7 @@
             "url": "https://openlibrary.org/subjects/romance_literature"
           }
         ],
-                "ebooks": [
+        "ebooks": [
           {
             "preview_url": "https://archive.org/details/tokillmockingbir0000unse_b3c1",
             "availability": "borrow",
@@ -9361,198 +9361,18 @@
   ],
   "login": [
     {
-      "username": "reereer",
-      "password": "wererw",
-      "role": "student",
-      "id": 1
-    },
-    {
-      "username": "erferferf",
-      "password": "erferferf",
-      "role": "professor",
-      "id": 2
-    },
-    {
-      "username": "Main Student",
-      "password": "4444",
-      "passwordAuth": "4444",
-      "role": "student",
-      "id": 3
-    },
-    {
-      "username": "bambam320",
-      "password": "444",
-      "passwordAuth": "444",
-      "role": "student",
-      "id": 4
-    },
-    {
-      "username": "bambam320",
-      "password": "2",
-      "passwordAuth": "2",
-      "role": "professor",
-      "id": 5
-    },
-    {
-      "username": "bambam320",
-      "password": "33",
-      "passwordAuth": "33",
-      "role": "professor",
-      "id": 6
-    },
-    {
-      "username": "bambam320",
-      "password": "fr",
-      "passwordAuth": "fr",
-      "role": "professor",
-      "id": 7
-    },
-    {
-      "username": "erferferf",
-      "password": "ff",
-      "passwordAuth": "ff",
-      "role": "student",
-      "id": 8
-    },
-    {
-      "username": "igor.mestechkin@gmail.com",
-      "password": "r",
-      "passwordAuth": "r",
-      "role": "professor",
-      "id": 9
-    },
-    {
-      "username": "reereer",
-      "password": "g",
-      "passwordAuth": "g",
-      "role": "student",
-      "id": 10
-    },
-    {
-      "username": "prof",
-      "password": "2",
-      "passwordAuth": "2",
-      "role": "professor",
-      "id": 11
-    },
-    {
-      "username": "stu",
-      "password": "2",
-      "passwordAuth": "2",
-      "role": "student",
-      "id": 12
-    },
-    {
-      "username": "bambam320",
-      "password": "999",
-      "passwordAuth": "999",
-      "role": "professor",
-      "id": 13
-    },
-    {
-      "username": "fr",
-      "password": "44",
-      "passwordAuth": "44",
-      "role": "professor",
-      "id": 14
-    },
-    {
-      "username": "bambam320",
-      "password": "f",
-      "passwordAuth": "f",
-      "role": "professor",
-      "id": 15
-    },
-    {
-      "username": "igor.mestechkin@gmail.com",
-      "password": "b",
-      "passwordAuth": "b",
-      "role": "student",
-      "id": 16
-    },
-    {
-      "username": "Igor.M",
-      "password": "gh",
-      "passwordAuth": "gh",
-      "role": "professor",
-      "id": 17
-    },
-    {
-      "username": "bambam320",
-      "password": "vv",
-      "passwordAuth": "vv",
-      "role": "student",
-      "id": 18
-    },
-    {
-      "username": "erferferf",
-      "password": "ll",
-      "passwordAuth": "ll",
-      "role": "student",
-      "id": 19
-    },
-    {
-      "username": "bambam320",
-      "password": "bb",
-      "passwordAuth": "bb",
-      "role": "professor",
-      "id": 20
-    },
-    {
-      "username": "igor.mestechkin@gmail.com",
-      "password": "v",
-      "passwordAuth": "v",
-      "role": "student",
-      "id": 21
-    },
-    {
-      "username": "bambam320",
-      "password": "as",
-      "passwordAuth": "as",
-      "role": "student",
-      "id": 22
-    },
-    {
-      "username": "igor.mestechkin@gmail.com",
-      "password": "bn",
-      "passwordAuth": "bn",
-      "role": "student",
-      "id": 23
-    },
-    {
-      "username": "bambam320",
-      "password": "asdasdasd",
-      "passwordAuth": "asdasdasd",
-      "role": "student",
-      "id": 24
-    },
-    {
       "username": "bambam320",
       "password": "p",
       "passwordAuth": "p",
       "role": "professor",
-      "id": 25
+      "id": 1
     },
     {
       "username": "bambam320",
       "password": "s",
       "passwordAuth": "s",
       "role": "student",
-      "id": 26
-    },
-    {
-      "username": "bambam320",
-      "password": "22",
-      "passwordAuth": "22",
-      "role": "professor",
-      "id": 27
-    },
-    {
-      "username": "bambam320",
-      "password": "gg",
-      "passwordAuth": "gg",
-      "role": "student",
-      "id": 28
+      "id": 2
     }
   ]
 }

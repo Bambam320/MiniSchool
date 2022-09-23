@@ -47,7 +47,7 @@ function Home () {
 
   return (
     <div>
-      <Container style={{marginTop: '80px'}}>
+      <Container style={{marginTop: '80px', marginBottom: '100px'}}>
         <Typography className='gradient-text' variant='h3' style={{fontWeight: '800', textAlign: 'center', marginBottom: '25px'}}>
           Welcome To The Flatiron Project University
         </Typography>

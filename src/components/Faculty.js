@@ -45,7 +45,7 @@ function Faculty() {
   return (
     <>
     {currentUser && currentUser.role === 'professor' ?
-    <Container style={{ marginTop: '100px' }}>
+    <Container style={{ marginTop: '100px', marginBottom: '100px' }}>
       <List
         component="nav"
         aria-labelledby="nested-list-subheader"

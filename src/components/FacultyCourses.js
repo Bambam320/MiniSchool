@@ -1,6 +1,9 @@
 //functional imports
 import React, { useEffect, useState } from 'react';
 
+//component imports
+import FacultyCoursesExpanded from './FacultyCoursesExpanded'
+
 //material imports
 import ListItem from '@material-ui/core/ListItem';
 import List from '@material-ui/core/List';
@@ -43,21 +46,24 @@ function FacultyCourses({ course }) {
 
   const listCourseMaterials = courseMaterial.map((book) => {
     let bookId = (Object.keys(book)[0])
-    let imageUrl = book[`${bookId}`].cover.large || 'https://media.istockphoto.com/vectors/loading-icon-vector-illustration-vector-id1335247217?k=20&m=1335247217&s=612x612&w=0&h=CQFY4NO0j2qc6kf4rTc0wTKYWL-9w5ldu-wF8D4oUBk='
-    let title = book[`${bookId}`].title
-    let author = book[`${bookId}`].authors[0].name
-    let publishDate = book[`${bookId}`].publish_date || 'Unknown'
-    let publishedBy = book[`${bookId}`].publishers[0].name
-    let publishedIn = book[`${bookId}`].publish_places[0].name || 'Unknown'
-    let excerpt = book.chapters.chapter_1.content.substr(0, 200)
-    let bookPreview = book[`${bookId}`].ebooks[0].preview_url
+    let bookInfo = {
+      'bookId': bookId,
+      imageUrl: book[`${bookId}`].cover.large || 'https://media.istockphoto.com/vectors/loading-icon-vector-illustration-vector-id1335247217?k=20&m=1335247217&s=612x612&w=0&h=CQFY4NO0j2qc6kf4rTc0wTKYWL-9w5ldu-wF8D4oUBk=',
+      title: book[`${bookId}`].title,
+      author: book[`${bookId}`].authors[0].name,
+      publishDate: book[`${bookId}`].publish_date || 'Unknown',
+      publishedBy: book[`${bookId}`].publishers[0].name,
+      publishedIn: book[`${bookId}`].publish_places[0].name || 'Unknown',
+      excerpt: book.chapters.chapter_1.content.substr(0, 200),
+      bookPreview: book[`${bookId}`].ebooks[0].preview_url
+    }
     
     return (
       <Collapse 
         in={open} 
         timeout="auto" 
         unmountOnExit>
-          <FacultyCoursesExpanded />
+          <FacultyCoursesExpanded bookInfo={bookInfo}/>
       </Collapse>
     )
   })
