@@ -1,5 +1,5 @@
 //functional imports
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 
@@ -15,8 +15,18 @@ function FacultyCards() {
   const [formValues, setFormValues] = useState({
     question: ''
   })
-  const [book, setBook] = useState({})
+  const [book, setBook] = useState({
+    title: '',
+    authors: [
+      {
+        name: ''
+      }
+    ]
+  })
   const params = useParams()
+
+  console.log(book)
+  console.log(params)
 
   useEffect(() => {
     const host = `http://localhost:3001/`
@@ -33,6 +43,7 @@ function FacultyCards() {
   }
 
   let bookId = Object.keys(book)[0]
+  console.log(bookId)
 
   function handleInputChange (e) {
     console.log(e)
