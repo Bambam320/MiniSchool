@@ -23,8 +23,8 @@ function App () {
       <Routes>
         <Route path="/" element={<NavBar />}>
           <Route index element={<Home />} />
-          <Route path="faculty" element={<Faculty />} />
-          <Route path="student" element={<Student />} />
+          <Route path="faculty/*" element={<Faculty />} />
+          <Route path="student/*" element={<Student />} />
           <Route path="explore" element={<Explore />} />
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />

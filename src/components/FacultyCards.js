@@ -1,75 +1,82 @@
 //functional imports
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 
 //material imports
-import ListItem from '@material-ui/core/ListItem';
-import List from '@material-ui/core/List';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ExpandLess from '@material-ui/icons/ExpandLess';
-import ExpandMore from '@material-ui/icons/ExpandMore';
-import ListItemText from '@material-ui/core/ListItemText';
-import Collapse from '@material-ui/core/Collapse';
-import CollectionsIcon from '@material-ui/icons/Collections';
-import { makeStyles } from '@material-ui/core/styles';
-import ChromeReaderModeIcon from '@material-ui/icons/ChromeReaderMode';
-import Box from '@material-ui/core/Box';
+import TextField from '@material-ui/core/TextField';
+import Form from '@material-ui/core/Form';
 import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { CardActionArea } from '@material-ui/core'
+import Button from '@material-ui/core/Button';
 
-function FacultyCards ({bookInfo}) {
-  const {bookId, imageUrl, title, author, publishDate, 
-    publishedBy, publishedIn, excerpt, bookPreview} = bookInfo
+function FacultyCards() {
+  const [formValues, setFormValues] = useState({
+    question: ''
+  })
+  const [book, setBook] = useState({})
+  const params = useParams()
 
-  function handleClick () {
-    console.log('well do something soon....')
+  useEffect(() => {
+    const host = `http://localhost:3001/`
+    const course = params.course
+    const id = params.jsonId
+    fetch(`${host}${course}/${id}`)
+      .then((r) => r.json())
+      .then((data) => setBookData(data))
+  }, [params])
+
+
+  function setBookData(data) {
+    setBook(data)
+  }
+
+  let bookId = Object.keys(book)[0]
+
+  function handleInputChange (e) {
+    console.log(e)
   }
 
   return (
-    <>      <Card 
-    style={{
-      marginBottom: '50px', 
-      maxWidth: '500px', 
-      borderStyle: "solid", 
-      borderWidth: '5px', 
-      borderColor: "#2AA624"
-      }} variant="outlined"
-    >
-    <CardActionArea onClick={handleClick}>
-    <CardMedia
-      style={{borderStyle: "solid", borderWidth: '5px', borderColor: "#dce04f"}} 
-      component="img"
-      height="1000px"
-      width="600px"
-      image={imageUrl}
-      alt={title}
-    />
-    <CardContent>
-    <Typography gutterBottom variant="h5" component="div">
-      {title}
-    </Typography>
-    <Typography variant ="h6">
-      Written By: {author}
-    </Typography>
-    <Typography variant="body2" gutterBottom>
-      {`Published in ${publishDate} by ${publishedBy} from ${publishedIn}`}
-    </Typography>
-    <Typography>
-      <strong>An excerpt from chapter 1 : </strong>{`${excerpt}...`}
-    </Typography>
-    <Typography>
-      <a href={bookPreview} target="_blank">Click here to view the eBook in a new window!</a>
-      <p> Click on the book to go to your account!</p>
-    </Typography>
-    </CardContent>
-    </CardActionArea>
-  </Card></>
+    <Container style={{ marginTop: '75px', marginBottom: '75px' }}>
+      <Card
+        style={{
+          marginBottom: '50px',
+          maxWidth: '500px',
+          borderStyle: "solid",
+          borderWidth: '5px',
+          borderColor: "#2AA624"
+        }} variant="outlined"
+      >
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            Title: {book[`${bookId}`].title}
+          </Typography>
+          <Typography variant="h6">
+            Written By: {book[`${bookId}`].authors[0].name}
+          </Typography>
+          <Typography variant="body2" gutterBottom>
+            Pages: {book[`${bookId}`].number_of_pages} || Published: {book[`${bookId}`].publish_date}
+          </Typography>
+          <Typography>
+            Assign questions below.
+          </Typography>
+          <Form>
+          <TextField
+            id="question-input"
+            name="username"
+            label="User Name"
+            type="text"
+            value={formValues.question}
+            onChange={handleInputChange}
+          />
+          <Button>Assign Question to current book!</Button>
+          </Form>
+        </CardContent>
+      </Card>
+    </Container>
   )
 }
 

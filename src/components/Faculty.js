@@ -1,9 +1,11 @@
 //functional imports
 import React, { useState, useContext } from 'react';
 import { LoggedUserContext } from './LoggedUserContext';
+import { Route, Routes, useMatch } from 'react-router-dom';
 
 //component imports
 import FacultyCourses from './FacultyCourses';
+import FacultyCards from './FacultyCards'
 
 //material imports
 import Container from '@material-ui/core/Container';
@@ -20,13 +22,14 @@ import ExpandMore from '@material-ui/icons/ExpandMore';
 import ChromeReaderModeIcon from '@material-ui/icons/ChromeReaderMode';
 
 function Faculty() {
+
   const { currentUser } = useContext(LoggedUserContext)
 
   const courses = ["eng101", "eng202", "eng303", "eng404", "eng505"]
 
   const listCourses = courses.map((course, i) => {
     return (
-      <FacultyCourses key={i} course={course}/>
+      <FacultyCourses key={i} course={course} />
     )
   })
 
@@ -44,22 +47,25 @@ function Faculty() {
 
   return (
     <>
-    {currentUser && currentUser.role === 'professor' ?
-    <Container style={{ marginTop: '100px', marginBottom: '100px' }}>
-      <List
-        component="nav"
-        aria-labelledby="nested-list-subheader"
-        subheader={
-          <ListSubheader component="div" id="nested-list-subheader">
-            Your courses!
-          </ListSubheader>
-        }
-        className={classes.root}
-      >
-        {listCourses}
-      </List>
-    </Container>
-    : currentUser && currentUser.role === 'student' ? <h3>Get out of here, you're not a Teacher!</h3> : <h3>Please login to view this content!</h3> }
+      {currentUser && currentUser.role === 'professor' ?
+        <Container style={{ marginTop: '100px', marginBottom: '100px' }}>
+          <List
+            component="nav"
+            aria-labelledby="nested-list-subheader"
+            subheader={
+              <ListSubheader component="div" id="nested-list-subheader">
+                Your courses!
+              </ListSubheader>
+            }
+            className={classes.root}
+          >
+            {listCourses}
+          </List>
+          <Routes>
+            <Route path=":course/:bookId/:jsonId" element={<FacultyCards />} />
+          </Routes>
+        </Container>
+        : currentUser && currentUser.role === 'student' ? <h3>Get out of here, you're not a Teacher!</h3> : <h3>Please login to view this content!</h3>}
     </>
   )
 }

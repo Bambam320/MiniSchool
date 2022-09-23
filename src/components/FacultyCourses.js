@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 //component imports
 import FacultyCoursesExpanded from './FacultyCoursesExpanded'
 
+
 //material imports
 import ListItem from '@material-ui/core/ListItem';
 import List from '@material-ui/core/List';
@@ -18,6 +19,7 @@ import ChromeReaderModeIcon from '@material-ui/icons/ChromeReaderMode';
 
 
 function FacultyCourses({ course }) {
+
   const [open, setOpen] = useState(false)
   const [courseMaterial, setCourseMaterial] = useState([])
   // console.log(course)
@@ -57,19 +59,21 @@ function FacultyCourses({ course }) {
       excerpt: book.chapters.chapter_1.content.substr(0, 200),
       bookPreview: book[`${bookId}`].ebooks[0].preview_url
     }
+    let jsonId= book.id
     
     return (
-      <Collapse 
-        in={open} 
-        timeout="auto" 
-        unmountOnExit>
-          <FacultyCoursesExpanded bookInfo={bookInfo}/>
-      </Collapse>
+      <div>
+        <Collapse 
+          in={open} 
+          timeout="auto" 
+          unmountOnExit>
+            <FacultyCoursesExpanded bookInfo={bookInfo} course={course} jsonId={jsonId}/>
+        </Collapse>
+      </div>
     )
   })
 
   const handleClick = () => {
-    console.log('this is handleClick')
     setOpen(!open)
   }
 

@@ -1,6 +1,6 @@
 //functional imports
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 
 //component imports
 import FacultyCards from './FacultyCards';
@@ -25,8 +25,9 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { CardActionArea } from '@material-ui/core'
+import { TitleTwoTone } from '@material-ui/icons';
 
-function FacultyCoursesExpanded({bookInfo}) {
+function FacultyCoursesExpanded({bookInfo, course, jsonId}) {
   const {bookId, imageUrl, title, author, publishDate, 
     publishedBy, publishedIn, excerpt, bookPreview} = bookInfo
 
@@ -42,20 +43,10 @@ function FacultyCoursesExpanded({bookInfo}) {
   }));
   const classes = useStyles();
 
-  function handleClick() {
-    console.log('we be clickin')
-  }
-
-  function handleBookClick () {
-    return (
-      <FacultyCards bookInfo={bookInfo}/>
-    )
-  }
-
   <ListItem button component={Link} to="/design"></ListItem>
   return (
     <List component="div" disablePadding>
-      <ListItem button component={Link} to="/faculty/" onClick={handleBookClick}
+      <ListItem button component={Link} to={`/faculty/${course}/${bookId}/${jsonId}`}
         className={classes.nested}>
         <ListItemIcon>
           <ChromeReaderModeIcon />
