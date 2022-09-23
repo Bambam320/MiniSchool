@@ -1,5 +1,9 @@
 //functional imports
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+//component imports
+import FacultyCards from './FacultyCards';
 
 //material imports
 import ListItem from '@material-ui/core/ListItem';
@@ -12,6 +16,15 @@ import Collapse from '@material-ui/core/Collapse';
 import CollectionsIcon from '@material-ui/icons/Collections';
 import { makeStyles } from '@material-ui/core/styles';
 import ChromeReaderModeIcon from '@material-ui/icons/ChromeReaderMode';
+import Box from '@material-ui/core/Box';
+import Container from '@material-ui/core/Container';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import { CardActionArea } from '@material-ui/core'
 
 function FacultyCoursesExpanded({bookInfo}) {
   const {bookId, imageUrl, title, author, publishDate, 
@@ -29,13 +42,20 @@ function FacultyCoursesExpanded({bookInfo}) {
   }));
   const classes = useStyles();
 
-  function handleBookClick (e) {
-    console.log(bookId)
+  function handleClick() {
+    console.log('we be clickin')
   }
 
+  function handleBookClick () {
+    return (
+      <FacultyCards bookInfo={bookInfo}/>
+    )
+  }
+
+  <ListItem button component={Link} to="/design"></ListItem>
   return (
     <List component="div" disablePadding>
-      <ListItem component="Button" onClick={handleBookClick} value={title}
+      <ListItem button component={Link} to="/faculty/" onClick={handleBookClick}
         className={classes.nested}>
         <ListItemIcon>
           <ChromeReaderModeIcon />
