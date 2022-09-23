@@ -55,11 +55,10 @@ function FacultyCards() {
         "Accept": "application/json"
       },
       body: JSON.stringify(formValues)
-      }
-        if (formValues.password === formValues.passwordAuth && formValues.password !== '') {
-          fetch(`http://localhost:3001/login`, post)
-            .then((r) => r.json())
-            .then((data) => (data))
+    }
+    fetch(`http://localhost:3001/login/${course}`, post)
+    .then((r) => r.json())
+    .then((data) => (data))
           return cleanUpForm(formValues.username, formValues.role)
         } else if (formValues.password !== formValues.passwordAuth) {
           return handleDialog()
