@@ -15,35 +15,33 @@ function FacultyCards() {
   const [formValues, setFormValues] = useState({
     question: ''
   })
-  const [book, setBook] = useState({
-    title: '',
-    authors: [
-      {
-        name: ''
-      }
-    ]
-  })
+  const [book, setBook] = useState({})
+  const [bookValid, setBookValid] = useState(false)
   const params = useParams()
+  
+  const host = `http://localhost:3001/`
+  const course = params.course
+  const id = params.jsonId
 
-  console.log(book)
-  console.log(params)
+  // console.log('eachbook', book)
+  // console.log('params', params)
 
   useEffect(() => {
-    const host = `http://localhost:3001/`
-    const course = params.course
-    const id = params.jsonId
     fetch(`${host}${course}/${id}`)
       .then((r) => r.json())
       .then((data) => setBookData(data))
-  }, [params])
+  }, [host, course, id])
 
 
   function setBookData(data) {
     setBook(data)
+    setBookValid(true)
   }
 
   let bookId = Object.keys(book)[0]
-  console.log(bookId)
+  // console.log('ID ID', bookId)
+  // console.log('is this author', book)
+  // console.log('title', book[`${bookId}`].title)
 
   function handleInputChange (e) {
     console.log(e)
@@ -51,6 +49,18 @@ function FacultyCards() {
 
   function handleSubmit (e) {
     e.preventDefault()
+  }
+
+  const title = () => {
+    if (bookValid) {
+      return book[`${bookId}`].title
+    } else return 'Loading'
+  }
+
+  const author = () => {
+    if (bookValid) {
+      return book[`${bookId}`].authors[0].name
+    }
   }
 
   return (
@@ -66,13 +76,13 @@ function FacultyCards() {
       >
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Title: {book[`${bookId}`].title}
+            Title: {title()}
           </Typography>
           <Typography variant="h6">
-            Written By: {book[`${bookId}`].authors[0].name}
+            Written By: {author()}
           </Typography>
           <Typography variant="body2" gutterBottom>
-            Pages: {book[`${bookId}`].number_of_pages} || Published: {book[`${bookId}`].publish_date}
+            {/* Pages: {book[`${bookId}`].number_of_pages} || Published: {book[`${bookId}`].publish_date} */}
           </Typography>
           <Typography>
             Assign questions below.
