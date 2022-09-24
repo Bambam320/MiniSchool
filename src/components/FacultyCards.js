@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom';
 
 
 //material imports
-import TextField from '@material-ui/core/TextField';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize'
 import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
@@ -42,48 +41,39 @@ function FacultyCards() {
   // console.log('is this author', book)
   // console.log('title', book[`${bookId}`].title)
 
+  //holds state with current question input
   function handleInputChange (e) {
     setFormValues(e.target.value)
   }
 
-  const newQuestion = {
-    questions: [formValues]
-  }
-  const putBook = Object.assign(book, newQuestion)
+  //create a new object for the question put to the server
 
-  console.log(putBook)
 
+  //puts the new question on the server in the matching book
   function handleSubmit (e) {
-    // e.preventDefault()
-    // const post = {
-    //   method: 'PUT',
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     "Accept": "application/json"
-    //   },
-    //   body: JSON.stringify(putBook)
-    // }
-    // fetch(`http://localhost:3001/${course}/${jsonId}`, post)
-    // .then((r) => r.json())
-    // .then((data) => (data))
-    //       return cleanUpForm(formValues.username, formValues.role)
-    //     } else if (formValues.password !== formValues.passwordAuth) {
-    //       return handleDialog()
-    //     } else return null
-    //   };
-    // }
+    e.preventDefault()
+    const questions = book.questions
+    const putBook = Object.assign(book, questions)
+    console.log(questions)
+    const put = {
+      method: 'PUT',
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(putBook)
+    }
+    fetch(`http://localhost:3001/${course}/${id}`, put)
+      .then((r) => r.json())
+      .then((data) => (data))
   }
 
   const info = (props) => {
     switch (true) {
       case bookValid && props === 1 : return book[`${bookId}`].title
-      break;
       case bookValid && props === 2 : return book[`${bookId}`].authors[0].name
-      break;
       case bookValid && props === 3 : return book[`${bookId}`].number_of_pages
-      break;
       case bookValid && props === 4 : return book[`${bookId}`].publish_date
-      break;
       default: return 'Loading...'
     }
   }
@@ -114,7 +104,7 @@ function FacultyCards() {
           </Typography>
           <form onSubmit={handleSubmit}>
           <TextareaAutosize
-          style={{width: 460}}
+            style={{width: 460}}
             maxRows={20}
             aria-label="maximum height"
             placeholder="Maximum 4 rows"
@@ -123,7 +113,7 @@ function FacultyCards() {
             value={formValues}
             onChange={handleInputChange}
           />
-          <Button style={{backgroundColor: 'lightgreen'}}>Assign Question to current book!</Button>
+          <Button type="submit" style={{backgroundColor: 'lightgreen'}}>Assign Question to current book!</Button>
           </form>
         </CardContent>
       </Card>
