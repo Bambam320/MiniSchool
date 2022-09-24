@@ -31,6 +31,11 @@ function StudentCards() {
       .then((data) => setBookData(data))
   }, [host, course, id])
 
+  //on params change, hide the guestion so the user has to display a new one
+  useEffect(() =>{
+    setShowQuestion(false)
+  }, [params])
+
   //from useEffect: to load state with selected book
   function setBookData(data) {
     setBook(data)
@@ -45,26 +50,27 @@ function StudentCards() {
     setFormValues(e.target.value)
   }
 
-  //puts the answer on the server in the matching book
+  //patches the answer on the server to the matching books matching question
   function handleSubmit(e) {
-  //   e.preventDefault()
-  //   const questionId = book.questions.length + 1
-  //   const questions = book.questions.push({ id: questionId, question: formValues, answer: '' })
-  //   const putBook = Object.assign(book, questions)
-  //   console.log(questionId)
-  //   console.log(`http://localhost:3001/${course}/${id}`)
-  //   const patch = {
-  //     method: 'PATCH',
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       "Accept": "application/json"
-  //     },
-  //     body: JSON.stringify(putBook)
-  //   }
-  //   fetch(`http://localhost:3001/${course}/${id}`, patch)
-  //     .then((r) => r.json())
-  //     .then((data) => clearForm(data))
+    e.preventDefault()
+    console.log('event', formValues)
+    let answeredQuestion = book.questions.find((ques) => ques.question === question)
+    answeredQuestion["answer"] = formValues
+    console.log('question from book that was displayed', answeredQuestion)
+    const patch = {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        questions: [...book.questions, answeredQuestion]
+      })
+    }
+    fetch(`${host}${course}/${id}`, patch)
+      .then((r) => r.json())
+      .then((updatedItem) => console.log('updatedItem', updatedItem));
   }
+  
 
   //from handleSubmit: clears the answer input form
   function clearForm() {
@@ -82,18 +88,16 @@ function StudentCards() {
     }
   }
 
-  //lists the first unanswered question from the server
+  //lists the next unanswered question from the server if there is one
   const handleClick = () => {
     let ques = {}
     console.log('book', book)
     if (book.questions.length > 1) {
-      console.log('length is long')
       ques = book.questions.find((question) => question.question !== '' && question.answer === '')
     } else if (book.questions.length === 1) {
-      console.log('length is one')
       ques = {question: 'No assignments found for this book'}
     }
-    setQuestion(ques === undefined ? '' : ques.question)
+    setQuestion(ques === undefined ? 'All asiggnments have been completed for this book' : ques.question)
     setShowQuestion(true)
   }
 
