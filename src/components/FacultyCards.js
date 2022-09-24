@@ -21,7 +21,7 @@ function FacultyCards() {
   const course = params.course
   const id = params.jsonId
 
-  // console.log('eachbook', book)
+  console.log('eachbook', book)
   // console.log('params', params)
 
   useEffect(() => {
@@ -52,9 +52,10 @@ function FacultyCards() {
   //puts the new question on the server in the matching book
   function handleSubmit (e) {
     e.preventDefault()
-    const questions = book.questions
+    const questions = [...book.questions, {question: formValues, answer: ''}]
     const putBook = Object.assign(book, questions)
     console.log(questions)
+    console.log(`http://localhost:3001/${course}/${id}`)
     const put = {
       method: 'PUT',
       headers: {
