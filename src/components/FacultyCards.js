@@ -52,9 +52,10 @@ function FacultyCards() {
   //puts the new question on the server in the matching book
   function handleSubmit (e) {
     e.preventDefault()
-    const questions = [...book.questions, {question: formValues, answer: ''}]
+    const questionId = book.questions.length + 2
+    const questions = book.questions.push({id: questionId, question: formValues, answer: ''})
     const putBook = Object.assign(book, questions)
-    console.log(questions)
+    console.log(questionId)
     console.log(`http://localhost:3001/${course}/${id}`)
     const put = {
       method: 'PUT',
