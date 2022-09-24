@@ -10,7 +10,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { makeStyles } from '@material-ui/core/styles';
 import ChromeReaderModeIcon from '@material-ui/icons/ChromeReaderMode';
 
-function FacultyCoursesExpanded({bookInfo, course, jsonId}) {
+function StudentCoursesExpanded({bookInfo, course, jsonId}) {
   //assigns variables for displaying info
   const {bookId, title} = bookInfo
 
@@ -30,7 +30,7 @@ function FacultyCoursesExpanded({bookInfo, course, jsonId}) {
   //returns menu lists which are links for each book in the course, the url passes params later needed
   return (
     <List component="div" disablePadding>
-      <ListItem button component={Link} to={`/faculty/${course}/${bookId}/${jsonId}`}
+      <ListItem button component={Link} to={`/student/${course}/${bookId}/${jsonId}`}  
         className={classes.nested}>
         <ListItemIcon>
           <ChromeReaderModeIcon />
@@ -41,4 +41,4 @@ function FacultyCoursesExpanded({bookInfo, course, jsonId}) {
   )
 }
 
-export default FacultyCoursesExpanded;
+export default StudentCoursesExpanded;

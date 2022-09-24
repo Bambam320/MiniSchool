@@ -77,7 +77,6 @@ function Login() {
 
   //from handleLoginSubmit: sets user context with current login info and navigates to student page
   const studentLogin = (user) => {
-    console.log(user)
     setSnackOpen(true)
     setCurrentUser(user)
     setFreshestUserInfo({

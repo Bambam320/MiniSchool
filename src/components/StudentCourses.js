@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 
 //component imports
-import FacultyCoursesExpanded from './FacultyCoursesExpanded'
+import StudentCoursesExpanded from './StudentCoursesExpanded'
 
 //material imports
 import ListItem from '@material-ui/core/ListItem';
@@ -13,7 +13,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Collapse from '@material-ui/core/Collapse';
 import CollectionsIcon from '@material-ui/icons/Collections';
 
-function FacultyCourses({ course }) {
+function StudentCourses({ course }) {
   //assigning state variables
   const [open, setOpen] = useState(false)
   const [courseMaterial, setCourseMaterial] = useState([])
@@ -54,7 +54,7 @@ function FacultyCourses({ course }) {
           in={open} 
           timeout="auto" 
           unmountOnExit>
-            <FacultyCoursesExpanded bookInfo={bookInfo} course={course} jsonId={jsonId}/>
+            <StudentCoursesExpanded bookInfo={bookInfo} course={course} jsonId={jsonId}/>
         </Collapse>
       </div>
     )
@@ -80,4 +80,4 @@ function FacultyCourses({ course }) {
   )
 };
 
-export default FacultyCourses;
+export default StudentCourses;

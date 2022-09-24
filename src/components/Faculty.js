@@ -1,38 +1,31 @@
 //functional imports
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { LoggedUserContext } from './LoggedUserContext';
-import { Route, Routes, useMatch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 //component imports
 import FacultyCourses from './FacultyCourses';
-import FacultyCards from './FacultyCards'
+import FacultyCards from './FacultyCards';
 
 //material imports
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import Collapse from '@material-ui/core/Collapse';
-import CollectionsIcon from '@material-ui/icons/Collections';
-import ExpandLess from '@material-ui/icons/ExpandLess';
-import ExpandMore from '@material-ui/icons/ExpandMore';
-import ChromeReaderModeIcon from '@material-ui/icons/ChromeReaderMode';
 
 function Faculty() {
-
+  //assigning variables and context
   const { currentUser } = useContext(LoggedUserContext)
-
   const courses = ["eng101", "eng202", "eng303", "eng404", "eng505"]
 
+  //lists the courses in new component
   const listCourses = courses.map((course, i) => {
     return (
       <FacultyCourses key={i} course={course} />
     )
   })
 
+  //class for the main list of courses
   const useStyles = makeStyles((theme) => ({
     root: {
       width: '100%',
@@ -45,6 +38,7 @@ function Faculty() {
   }));
   const classes = useStyles();
 
+  //returns container holding menu of courses and book card via a route
   return (
     <>
       {currentUser && currentUser.role === 'professor' ?

@@ -596,41 +596,32 @@
       ]
     },
     {
-      "OLID:OL4444289M": {
-        "url": "https://openlibrary.org/books/OL4444289M/For_whom_the_bell_tolls",
-        "key": "/books/OL4444289M",
-        "title": "For whom the bell tolls",
+      "OLID:OL32520899M": {
+        "url": "https://openlibrary.org/books/OL32520899M/And_Then_There_Were_None",
+        "key": "/books/OL32520899M",
+        "title": "And Then There Were None",
         "authors": [
           {
-            "url": "https://openlibrary.org/authors/OL13640A/Ernest_Hemingway",
-            "name": "Ernest Hemingway"
+            "url": "https://openlibrary.org/authors/OL27695A/Agatha_Christie",
+            "name": "Agatha Christie"
           }
         ],
-        "number_of_pages": 507,
-        "pagination": "507 p. ;",
-        "by_statement": "Ernest Hemingway.",
+        "number_of_pages": 183,
+        "pagination": "vi, 183p.",
         "identifiers": {
-          "librarything": [
-            "10084"
+          "goodreads": [
+            "42078479"
           ],
-          "lccn": [
-            "79106030"
+          "oclc": [
+            "1549160"
           ],
           "openlibrary": [
-            "OL4444289M"
-          ]
-        },
-        "classifications": {
-          "lc_classifications": [
-            "PS3515.E37 F6 1940c"
-          ],
-          "dewey_decimal_class": [
-            "813/.5/2"
+            "OL32520899M"
           ]
         },
         "publishers": [
           {
-            "name": "Scribner"
+            "name": "Dodd, Mead & Company"
           }
         ],
         "publish_places": [
@@ -638,87 +629,91 @@
             "name": "New York"
           }
         ],
-        "publish_date": "1940",
+        "publish_date": "1966",
         "subjects": [
           {
-            "name": "Spain in fiction",
-            "url": "https://openlibrary.org/subjects/spain_in_fiction"
+            "name": "Roman policier",
+            "url": "https://openlibrary.org/subjects/roman_policier"
+          },
+          {
+            "name": "French language materials",
+            "url": "https://openlibrary.org/subjects/french_language_materials"
+          },
+          {
+            "name": "Français (langue)",
+            "url": "https://openlibrary.org/subjects/français_(langue)"
+          },
+          {
+            "name": "Lectures et morceaux choisis",
+            "url": "https://openlibrary.org/subjects/lectures_et_morceaux_choisis"
+          },
+          {
+            "name": "cyanide poisoning",
+            "url": "https://openlibrary.org/subjects/cyanide_poisoning"
+          },
+          {
+            "name": "chloral hydrate",
+            "url": "https://openlibrary.org/subjects/chloral_hydrate"
+          },
+          {
+            "name": "potassium cyanide",
+            "url": "https://openlibrary.org/subjects/potassium_cyanide"
+          },
+          {
+            "name": "Scotland Yard",
+            "url": "https://openlibrary.org/subjects/scotland_yard"
+          },
+          {
+            "name": "coroners",
+            "url": "https://openlibrary.org/subjects/coroners"
+          },
+          {
+            "name": "message in a bottle",
+            "url": "https://openlibrary.org/subjects/message_in_a_bottle"
+          },
+          {
+            "name": "Detective and mystery stories",
+            "url": "https://openlibrary.org/subjects/detective_and_mystery_stories"
+          },
+          {
+            "name": "Mystery fiction",
+            "url": "https://openlibrary.org/subjects/mystery_fiction"
+          },
+          {
+            "name": "murder",
+            "url": "https://openlibrary.org/subjects/murder"
           },
           {
             "name": "Fiction",
             "url": "https://openlibrary.org/subjects/fiction"
           },
           {
-            "name": "History",
-            "url": "https://openlibrary.org/subjects/history"
+            "name": "Millionaires",
+            "url": "https://openlibrary.org/subjects/millionaires"
           },
           {
-            "name": "Fiction in English",
-            "url": "https://openlibrary.org/subjects/fiction_in_english"
+            "name": "Murder victims",
+            "url": "https://openlibrary.org/subjects/murder_victims"
           },
           {
-            "name": "Spanish Civil War",
-            "url": "https://openlibrary.org/subjects/spanish_civil_war"
+            "name": "Islands",
+            "url": "https://openlibrary.org/subjects/islands"
           },
           {
-            "name": "Americans",
-            "url": "https://openlibrary.org/subjects/americans"
+            "name": "Millionaires in fiction",
+            "url": "https://openlibrary.org/subjects/millionaires_in_fiction"
           },
           {
-            "name": "open_syllabus_project",
-            "url": "https://openlibrary.org/subjects/open_syllabus_project"
+            "name": "Murder victims in fiction",
+            "url": "https://openlibrary.org/subjects/murder_victims_in_fiction"
           },
           {
-            "name": "Guerrilla warfare",
-            "url": "https://openlibrary.org/subjects/guerrilla_warfare"
-          },
-          {
-            "name": "Foreign Participation",
-            "url": "https://openlibrary.org/subjects/foreign_participation"
-          },
-          {
-            "name": "Novelas españolas",
-            "url": "https://openlibrary.org/subjects/novelas_españolas"
-          },
-          {
-            "name": "Military participation",
-            "url": "https://openlibrary.org/subjects/military_participation"
-          },
-          {
-            "name": "Historia",
-            "url": "https://openlibrary.org/subjects/historia"
-          },
-          {
-            "name": "Novelas",
-            "url": "https://openlibrary.org/subjects/novelas"
-          },
-          {
-            "name": "Historical fiction",
-            "url": "https://openlibrary.org/subjects/historical_fiction"
-          },
-          {
-            "name": "Ficción histórica",
-            "url": "https://openlibrary.org/subjects/ficción_histórica"
-          },
-          {
-            "name": "Novela estadounidense",
-            "url": "https://openlibrary.org/subjects/novela_estadounidense"
-          },
-          {
-            "name": "American participation",
-            "url": "https://openlibrary.org/subjects/american_participation"
-          },
-          {
-            "name": "Novela histórica",
-            "url": "https://openlibrary.org/subjects/novela_histórica"
+            "name": "Islands in fiction",
+            "url": "https://openlibrary.org/subjects/islands_in_fiction"
           },
           {
             "name": "Reading Level-Grade 9",
             "url": "https://openlibrary.org/subjects/reading_level-grade_9"
-          },
-          {
-            "name": "Reading Level-Grade 8",
-            "url": "https://openlibrary.org/subjects/reading_level-grade_8"
           },
           {
             "name": "Reading Level-Grade 11",
@@ -733,119 +728,201 @@
             "url": "https://openlibrary.org/subjects/reading_level-grade_12"
           },
           {
-            "name": "Foreign",
-            "url": "https://openlibrary.org/subjects/foreign"
-          },
-          {
-            "name": "American fiction",
-            "url": "https://openlibrary.org/subjects/american_fiction"
-          },
-          {
             "name": "Large type books",
             "url": "https://openlibrary.org/subjects/large_type_books"
           },
           {
-            "name": "American literature",
-            "url": "https://openlibrary.org/subjects/american_literature"
+            "name": "Crime",
+            "url": "https://openlibrary.org/subjects/crime"
           },
           {
-            "name": "War & military\"\"\"\"",
-            "url": "https://openlibrary.org/subjects/war_&_military\"\"\"\""
+            "name": "Historical",
+            "url": "https://openlibrary.org/subjects/historical"
           },
           {
-            "name": "Fiction classics",
-            "url": "https://openlibrary.org/subjects/fiction_classics"
+            "name": "Mystery & Detective",
+            "url": "https://openlibrary.org/subjects/mystery_&_detective"
           },
           {
-            "name": "Ficción",
-            "url": "https://openlibrary.org/subjects/ficción"
+            "name": "Traditional",
+            "url": "https://openlibrary.org/subjects/traditional"
           },
           {
-            "name": "Guerra de guerrillas",
-            "url": "https://openlibrary.org/subjects/guerra_de_guerrillas"
+            "name": "Roman anglais",
+            "url": "https://openlibrary.org/subjects/roman_anglais"
           },
           {
-            "name": "Americanos",
-            "url": "https://openlibrary.org/subjects/americanos"
+            "name": "Littérature anglaise",
+            "url": "https://openlibrary.org/subjects/littérature_anglaise"
           },
           {
-            "name": "American fiction (fictional works by one author)",
-            "url": "https://openlibrary.org/subjects/american_fiction_(fictional_works_by_one_author)"
+            "name": "English language",
+            "url": "https://openlibrary.org/subjects/english_language"
           },
           {
-            "name": "Spain, history, civil war, 1936-1939, fiction",
-            "url": "https://openlibrary.org/subjects/spain,_history,_civil_war,_1936-1939,_fiction"
+            "name": "Fiction, mystery & detective, traditional",
+            "url": "https://openlibrary.org/subjects/fiction,_mystery_&_detective,_traditional"
+          },
+          {
+            "name": "Fiction, thrillers, suspense",
+            "url": "https://openlibrary.org/subjects/fiction,_thrillers,_suspense"
+          },
+          {
+            "name": "Fiction, mystery & detective, general",
+            "url": "https://openlibrary.org/subjects/fiction,_mystery_&_detective,_general"
+          },
+          {
+            "name": "Fiction, crime",
+            "url": "https://openlibrary.org/subjects/fiction,_crime"
+          },
+          {
+            "name": "English literature",
+            "url": "https://openlibrary.org/subjects/english_literature"
+          },
+          {
+            "name": "England, fiction",
+            "url": "https://openlibrary.org/subjects/england,_fiction"
+          },
+          {
+            "name": "English Detective and mystery stories",
+            "url": "https://openlibrary.org/subjects/english_detective_and_mystery_stories"
           }
         ],
         "subject_places": [
           {
-            "name": "Spain",
-            "url": "https://openlibrary.org/subjects/place:spain"
+            "name": "Devon (England)",
+            "url": "https://openlibrary.org/subjects/place:devon_(england)"
           },
           {
-            "name": "España",
-            "url": "https://openlibrary.org/subjects/place:españa"
+            "name": "Devon",
+            "url": "https://openlibrary.org/subjects/place:devon"
+          },
+          {
+            "name": "England",
+            "url": "https://openlibrary.org/subjects/place:england"
           }
         ],
         "subject_people": [
           {
-            "name": "Francisco Franco Bahamondef​g​ (1892-1975)",
-            "url": "https://openlibrary.org/subjects/person:francisco_franco_bahamondef​g​_(1892-1975)"
+            "name": "U.N.Owen",
+            "url": "https://openlibrary.org/subjects/person:u.n.owen"
           },
           {
-            "name": "Robert Jordan",
-            "url": "https://openlibrary.org/subjects/person:robert_jordan"
+            "name": "Anthony James Marston",
+            "url": "https://openlibrary.org/subjects/person:anthony_james_marston"
           },
           {
-            "name": "Maria",
-            "url": "https://openlibrary.org/subjects/person:maria"
+            "name": "Ethel Rogers",
+            "url": "https://openlibrary.org/subjects/person:ethel_rogers"
+          },
+          {
+            "name": "John Gordon MacArthur",
+            "url": "https://openlibrary.org/subjects/person:john_gordon_macarthur"
+          },
+          {
+            "name": "Thomas Rogers",
+            "url": "https://openlibrary.org/subjects/person:thomas_rogers"
+          },
+          {
+            "name": "Emily Caroline Brent",
+            "url": "https://openlibrary.org/subjects/person:emily_caroline_brent"
+          },
+          {
+            "name": "Edward George Armstrong",
+            "url": "https://openlibrary.org/subjects/person:edward_george_armstrong"
+          },
+          {
+            "name": "William Henry Blore",
+            "url": "https://openlibrary.org/subjects/person:william_henry_blore"
+          },
+          {
+            "name": "Philip Lombard",
+            "url": "https://openlibrary.org/subjects/person:philip_lombard"
+          },
+          {
+            "name": "Vera Elizabeth Claythorne",
+            "url": "https://openlibrary.org/subjects/person:vera_elizabeth_claythorne"
+          },
+          {
+            "name": "Lawrence John Wargrave",
+            "url": "https://openlibrary.org/subjects/person:lawrence_john_wargrave"
+          },
+          {
+            "name": "Isaac Morris",
+            "url": "https://openlibrary.org/subjects/person:isaac_morris"
+          },
+          {
+            "name": "Fred Narracott",
+            "url": "https://openlibrary.org/subjects/person:fred_narracott"
+          },
+          {
+            "name": "Thomas Legge",
+            "url": "https://openlibrary.org/subjects/person:thomas_legge"
+          },
+          {
+            "name": "Inspector Maine",
+            "url": "https://openlibrary.org/subjects/person:inspector_maine"
           }
         ],
         "subject_times": [
           {
-            "name": "1936-1939",
-            "url": "https://openlibrary.org/subjects/time:1936-1939"
-          },
+            "name": "1930s",
+            "url": "https://openlibrary.org/subjects/time:1930s"
+          }
+        ],
+        "excerpts": [
           {
-            "name": "Civil War, 1936-1939",
-            "url": "https://openlibrary.org/subjects/time:civil_war,_1936-1939"
+            "text": "In the corner of a first-class smoking carriage, Mr. Justice Wargrave, lately retired from the bench, puffed at a cigar and ran an interested eye throught the political news in the Times.",
+            "comment": "first sentence"
           }
         ],
         "links": [
           {
-            "title": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/For_Whom_the_Bell_Tolls"
-          },
-          {
             "title": "Wikidata",
-            "url": "https://www.wikidata.org/wiki/Q200920"
+            "url": "https://www.wikidata.org/wiki/Q214132"
           },
           {
-            "title": "VIAF ID: 176844694",
-            "url": "https://viaf.org/viaf/176844694"
+            "title": "VIAF ID: 313145424580486831117",
+            "url": "https://viaf.org/viaf/313145424580486831117"
           },
           {
-            "title": "inventaire.io",
-            "url": "https://inventaire.io/entity/wd:Q200920"
+            "title": "And Then There Were None - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/And_Then_There_Were_None"
           },
           {
-            "title": "BookBrainz",
-            "url": "https://bookbrainz.org/work/3f9ead82-7357-4caf-9bdf-c3090d0c6d22"
+            "title": "Collecting Ten Little Niggers by Christie, Agatha - First edition ...",
+            "url": "https://www.biblio.com/ten-little-niggers-by-christie-agatha/work/290352"
+          },
+          {
+            "title": "The History Behind Agatha Christie's “And Then There Were None”",
+            "url": "https://www.theparisreview.org/blog/2016/02/05/mystery/"
+          },
+          {
+            "title": "Ten Little Niggers - Agatha Christie (1939) - BoekMeter.nl",
+            "url": "https://www.boekmeter.nl/book/197"
+          },
+          {
+            "title": "Summary and trivia at AgathaChristie.com",
+            "url": "https://www.agathachristie.com/stories/and-then-there-were-none"
+          },
+          {
+            "title": "thegreatestbooks.org/items/2255",
+            "url": "https://thegreatestbooks.org/items/2255"
           }
         ],
         "ebooks": [
           {
-            "preview_url": "https://archive.org/details/forwhombelltolls01hemi",
+            "preview_url": "https://archive.org/details/andthentherewere0000unse_a4q0",
             "availability": "borrow",
             "formats": {},
-            "borrow_url": "https://openlibrary.org/books/OL4444289M/For_whom_the_bell_tolls/borrow",
+            "borrow_url": "https://openlibrary.org/books/OL32520899M/And_Then_There_Were_None/borrow",
             "checkedout": false
           }
         ],
         "cover": {
-          "small": "https://covers.openlibrary.org/b/id/8231789-S.jpg",
-          "medium": "https://covers.openlibrary.org/b/id/8231789-M.jpg",
-          "large": "https://covers.openlibrary.org/b/id/8231789-L.jpg"
+          "small": "https://covers.openlibrary.org/b/id/11172296-S.jpg",
+          "medium": "https://covers.openlibrary.org/b/id/11172296-M.jpg",
+          "large": "https://covers.openlibrary.org/b/id/11172296-L.jpg"
         }
       },
       "chapters": {
@@ -877,6 +954,7 @@
           "question": "",
           "answer": ""
         }
+      ]
     },
     {
       "OLID:OL24777120M": {
@@ -3057,6 +3135,11 @@
         {
           "id": 1,
           "question": "",
+          "answer": ""
+        },
+        {
+          "id": 2,
+          "question": "Which way to the restaurant at the end of the universe?",
           "answer": ""
         }
       ]
