@@ -46,25 +46,32 @@ function FacultyCards() {
     setFormValues(e.target.value)
   }
 
+  const newQuestion = {
+    questions: [formValues]
+  }
+  const putBook = Object.assign(book, newQuestion)
+
+  console.log(putBook)
+
   function handleSubmit (e) {
-    e.preventDefault()
-    const post = {
-      method: 'POST',
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      },
-      body: JSON.stringify(formValues)
-    }
-    fetch(`http://localhost:3001/login/${course}`, post)
-    .then((r) => r.json())
-    .then((data) => (data))
-          return cleanUpForm(formValues.username, formValues.role)
-        } else if (formValues.password !== formValues.passwordAuth) {
-          return handleDialog()
-        } else return null
-      };
-    }
+    // e.preventDefault()
+    // const post = {
+    //   method: 'PUT',
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     "Accept": "application/json"
+    //   },
+    //   body: JSON.stringify(putBook)
+    // }
+    // fetch(`http://localhost:3001/${course}/${jsonId}`, post)
+    // .then((r) => r.json())
+    // .then((data) => (data))
+    //       return cleanUpForm(formValues.username, formValues.role)
+    //     } else if (formValues.password !== formValues.passwordAuth) {
+    //       return handleDialog()
+    //     } else return null
+    //   };
+    // }
   }
 
   const info = (props) => {
