@@ -65,7 +65,7 @@ function StudentCards() {
       body: JSON.stringify({
         questions: [...book.questions].push(answeredQuestion)
       })
-    }
+    } 
     fetch(`${host}${course}/${id}`, patch)
       .then((r) => r.json())
       .then(() => setFormValues(''));

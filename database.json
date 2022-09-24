@@ -3131,7 +3131,18 @@
         }
       },
       "id": 2,
-      "questions": 3
+      "questions": [
+        {
+          "id": 1,
+          "question": "",
+          "answer": ""
+        },
+        {
+          "id": 2,
+          "question": "this question needs an answer",
+          "answer": ""
+        }
+      ]
     },
     {
       "OLID:OL26491056M": {
