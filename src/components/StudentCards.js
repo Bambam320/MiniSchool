@@ -56,19 +56,20 @@ function StudentCards() {
     console.log('event', formValues)
     let answeredQuestion = book.questions.find((ques) => ques.question === question)
     answeredQuestion["answer"] = formValues
-    console.log('question from book that was displayed', answeredQuestion)
+    console.log('question from book that was displayed', answeredQuestion['id'])
     const patch = {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        questions: [...book.questions, answeredQuestion]
+        questions: [...book.questions].push(answeredQuestion)
       })
     }
     fetch(`${host}${course}/${id}`, patch)
       .then((r) => r.json())
-      .then((updatedItem) => console.log('updatedItem', updatedItem));
+      .then(() => setFormValues(''));
+    setShowQuestion(false)
   }
   
 

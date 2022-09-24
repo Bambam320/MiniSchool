@@ -3131,18 +3131,7 @@
         }
       },
       "id": 2,
-      "questions": [
-        {
-          "id": 1,
-          "question": "",
-          "answer": ""
-        },
-        {
-          "id": 2,
-          "question": "Which way to the restaurant at the end of the universe?",
-          "answer": ""
-        }
-      ]
+      "questions": 3
     },
     {
       "OLID:OL26491056M": {
