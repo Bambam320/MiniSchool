@@ -1,4 +1,315 @@
 {
+  "english_course": [
+    {
+      "id": 1,
+      "name": "English 101",
+      "bookArray": [
+        {
+          "OLID": "OL4444289M",
+          "bookInfo": {
+            "url": "https://openlibrary.org/books/OL4444289M/For_whom_the_bell_tolls",
+            "key": "/books/OL4444289M",
+            "title": "For whom the bell tolls",
+            "authors": [
+              {
+                "url": "https://openlibrary.org/authors/OL13640A/Ernest_Hemingway",
+                "name": "Ernest Hemingway"
+              }
+            ],
+            "number_of_pages": 507,
+            "pagination": "507 p. ;",
+            "by_statement": "Ernest Hemingway.",
+            "identifiers": {
+              "librarything": [
+                "10084"
+              ],
+              "lccn": [
+                "79106030"
+              ],
+              "openlibrary": [
+                "OL4444289M"
+              ]
+            },
+            "classifications": {
+              "lc_classifications": [
+                "PS3515.E37 F6 1940c"
+              ],
+              "dewey_decimal_class": [
+                "813/.5/2"
+              ]
+            },
+            "publishers": [
+              {
+                "name": "Scribner"
+              }
+            ],
+            "publish_places": [
+              {
+                "name": "New York"
+              }
+            ],
+            "publish_date": "1940",
+            "subjects": [
+              {
+                "name": "Spain in fiction",
+                "url": "https://openlibrary.org/subjects/spain_in_fiction"
+              },
+              {
+                "name": "Fiction",
+                "url": "https://openlibrary.org/subjects/fiction"
+              },
+              {
+                "name": "History",
+                "url": "https://openlibrary.org/subjects/history"
+              },
+              {
+                "name": "Fiction in English",
+                "url": "https://openlibrary.org/subjects/fiction_in_english"
+              },
+              {
+                "name": "Spanish Civil War",
+                "url": "https://openlibrary.org/subjects/spanish_civil_war"
+              },
+              {
+                "name": "Americans",
+                "url": "https://openlibrary.org/subjects/americans"
+              },
+              {
+                "name": "open_syllabus_project",
+                "url": "https://openlibrary.org/subjects/open_syllabus_project"
+              },
+              {
+                "name": "Guerrilla warfare",
+                "url": "https://openlibrary.org/subjects/guerrilla_warfare"
+              },
+              {
+                "name": "Foreign Participation",
+                "url": "https://openlibrary.org/subjects/foreign_participation"
+              },
+              {
+                "name": "Novelas españolas",
+                "url": "https://openlibrary.org/subjects/novelas_españolas"
+              },
+              {
+                "name": "Military participation",
+                "url": "https://openlibrary.org/subjects/military_participation"
+              },
+              {
+                "name": "Historia",
+                "url": "https://openlibrary.org/subjects/historia"
+              },
+              {
+                "name": "Novelas",
+                "url": "https://openlibrary.org/subjects/novelas"
+              },
+              {
+                "name": "Historical fiction",
+                "url": "https://openlibrary.org/subjects/historical_fiction"
+              },
+              {
+                "name": "Ficción histórica",
+                "url": "https://openlibrary.org/subjects/ficción_histórica"
+              },
+              {
+                "name": "Novela estadounidense",
+                "url": "https://openlibrary.org/subjects/novela_estadounidense"
+              },
+              {
+                "name": "American participation",
+                "url": "https://openlibrary.org/subjects/american_participation"
+              },
+              {
+                "name": "Novela histórica",
+                "url": "https://openlibrary.org/subjects/novela_histórica"
+              },
+              {
+                "name": "Reading Level-Grade 9",
+                "url": "https://openlibrary.org/subjects/reading_level-grade_9"
+              },
+              {
+                "name": "Reading Level-Grade 8",
+                "url": "https://openlibrary.org/subjects/reading_level-grade_8"
+              },
+              {
+                "name": "Reading Level-Grade 11",
+                "url": "https://openlibrary.org/subjects/reading_level-grade_11"
+              },
+              {
+                "name": "Reading Level-Grade 10",
+                "url": "https://openlibrary.org/subjects/reading_level-grade_10"
+              },
+              {
+                "name": "Reading Level-Grade 12",
+                "url": "https://openlibrary.org/subjects/reading_level-grade_12"
+              },
+              {
+                "name": "Foreign",
+                "url": "https://openlibrary.org/subjects/foreign"
+              },
+              {
+                "name": "American fiction",
+                "url": "https://openlibrary.org/subjects/american_fiction"
+              },
+              {
+                "name": "Large type books",
+                "url": "https://openlibrary.org/subjects/large_type_books"
+              },
+              {
+                "name": "American literature",
+                "url": "https://openlibrary.org/subjects/american_literature"
+              },
+              {
+                "name": "War & military\"\"\"\"",
+                "url": "https://openlibrary.org/subjects/war_&_military\"\"\"\""
+              },
+              {
+                "name": "Fiction classics",
+                "url": "https://openlibrary.org/subjects/fiction_classics"
+              },
+              {
+                "name": "Ficción",
+                "url": "https://openlibrary.org/subjects/ficción"
+              },
+              {
+                "name": "Guerra de guerrillas",
+                "url": "https://openlibrary.org/subjects/guerra_de_guerrillas"
+              },
+              {
+                "name": "Americanos",
+                "url": "https://openlibrary.org/subjects/americanos"
+              },
+              {
+                "name": "American fiction (fictional works by one author)",
+                "url": "https://openlibrary.org/subjects/american_fiction_(fictional_works_by_one_author)"
+              },
+              {
+                "name": "Spain, history, civil war, 1936-1939, fiction",
+                "url": "https://openlibrary.org/subjects/spain,_history,_civil_war,_1936-1939,_fiction"
+              }
+            ],
+            "subject_places": [
+              {
+                "name": "Spain",
+                "url": "https://openlibrary.org/subjects/place:spain"
+              },
+              {
+                "name": "España",
+                "url": "https://openlibrary.org/subjects/place:españa"
+              }
+            ],
+            "subject_people": [
+              {
+                "name": "Francisco Franco Bahamondef​g​ (1892-1975)",
+                "url": "https://openlibrary.org/subjects/person:francisco_franco_bahamondef​g​_(1892-1975)"
+              },
+              {
+                "name": "Robert Jordan",
+                "url": "https://openlibrary.org/subjects/person:robert_jordan"
+              },
+              {
+                "name": "Maria",
+                "url": "https://openlibrary.org/subjects/person:maria"
+              }
+            ],
+            "subject_times": [
+              {
+                "name": "1936-1939",
+                "url": "https://openlibrary.org/subjects/time:1936-1939"
+              },
+              {
+                "name": "Civil War, 1936-1939",
+                "url": "https://openlibrary.org/subjects/time:civil_war,_1936-1939"
+              }
+            ],
+            "links": [
+              {
+                "title": "Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/For_Whom_the_Bell_Tolls"
+              },
+              {
+                "title": "Wikidata",
+                "url": "https://www.wikidata.org/wiki/Q200920"
+              },
+              {
+                "title": "VIAF ID: 176844694",
+                "url": "https://viaf.org/viaf/176844694"
+              },
+              {
+                "title": "inventaire.io",
+                "url": "https://inventaire.io/entity/wd:Q200920"
+              },
+              {
+                "title": "BookBrainz",
+                "url": "https://bookbrainz.org/work/3f9ead82-7357-4caf-9bdf-c3090d0c6d22"
+              }
+            ],
+            "ebooks": [
+              {
+                "preview_url": "https://archive.org/details/forwhombelltolls01hemi",
+                "availability": "borrow",
+                "formats": {},
+                "borrow_url": "https://openlibrary.org/books/OL4444289M/For_whom_the_bell_tolls/borrow",
+                "checkedout": false
+              }
+            ],
+            "cover": {
+              "small": "https://covers.openlibrary.org/b/id/8231789-S.jpg",
+              "medium": "https://covers.openlibrary.org/b/id/8231789-M.jpg",
+              "large": "https://covers.openlibrary.org/b/id/8231789-L.jpg"
+            }
+          },
+          "chapters": [
+            {
+              "id": 1,
+              "name": "Chapter 1",
+              "content": "The principle of distribution of the subject-matter between the two works is far from obvious, and has been much debated. Not much can be gathered from their titles, which in any case were not given to them by their author. Nor do these titles suggest any very compact unity in the works to which they are applied: the plural forms, which survive so oddly in English (Ethic_s_, Politic_s_), were intended to indicate the treatment within a single work of a _group_ of connected questions."
+            },
+            {
+              "id": 2,
+              "name": "Chapter 2",
+              "content": "The _Ethics_ of Aristotle is one half of a single treatise of which his _Politics_ is the other half. Both deal with one and the same subject. This subject is what Aristotle calls in one place the “philosophy of human affairs;” but more frequently Political or Social Science. In the two works taken together we have their author’s whole theory of human conduct or practical activity, that is, of all human activity which is not directed merely to knowledge or truth."
+            },
+            {
+              "id": 3,
+              "name": "Chapter 3",
+              "content": "Nevertheless each work aims at a relative completeness, and it is important to observe the relation of each to the other. The distinction is not that the one treats of Moral and the other of Political Philosophy, nor again that the one deals with the moral activity of the individual and the other with that of the State, nor once more that the one gives us the theory of human conduct, while the other discusses its"
+            },
+            {
+              "id": 4,
+              "name": "Chapter 4",
+              "content": "We must, however, remember that the production of good character is not the end of either individual or state action: that is the aim of the one and the other because good character is the indispensable condition and chief determinant of happiness, itself the goal of all human doing. The end of all action, individual or collective, is the greatest happiness of the greatest number. There is, Aristotle insists, no difference of kind between the good of one and the good of many or all."
+            },
+            {
+              "id": 5,
+              "name": "Chapter 5",
+              "content": "Looking forward, then, to the life of the State as that which aids support, and combines the efforts of the individual to obtain happiness, Aristotle draws no hard and fast distinction between the spheres of action of Man as individual and Man as citizen. Nor does the division of his discussion into the _Ethics_ and the _Politics_ rest upon any such distinction. The distinction implied is rather between two stages in the life of the civilised man—the stage of preparation for the full life of the adult citizen, and the stage of the actual exercise or enjoyment of citizenship."
+            }
+          ],
+          "id": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "English 202",
+      "bookArray": []
+    },
+    {
+      "id": 3,
+      "name": "English 303",
+      "bookArray": []
+    },
+    {
+      "id": 4,
+      "name": "English 404",
+      "bookArray": []
+    },
+    {
+      "id": 5,
+      "name": "English 505",
+      "bookArray": []
+    }
+  ],
   "eng101": [
     {
       "OLID:OL4444289M": {
@@ -275,7 +586,14 @@
           "content": "Looking forward, then, to the life of the State as that which aids support, and combines the efforts of the individual to obtain happiness, Aristotle draws no hard and fast distinction between the spheres of action of Man as individual and Man as citizen. Nor does the division of his discussion into the _Ethics_ and the _Politics_ rest upon any such distinction. The distinction implied is rather between two stages in the life of the civilised man—the stage of preparation for the full life of the adult citizen, and the stage of the actual exercise or enjoyment of citizenship."
         }
       },
-      "id": 1
+      "id": 1,
+      "questions": [
+        {
+          "id": 1,
+          "question": "",
+          "answer": ""
+        }
+      ]
     },
     {
       "OLID:OL32520899M": {
@@ -629,7 +947,14 @@
           "content": "Looking forward, then, to the life of the State as that which aids support, and combines the efforts of the individual to obtain happiness, Aristotle draws no hard and fast distinction between the spheres of action of Man as individual and Man as citizen. Nor does the division of his discussion into the _Ethics_ and the _Politics_ rest upon any such distinction. The distinction implied is rather between two stages in the life of the civilised man—the stage of preparation for the full life of the adult citizen, and the stage of the actual exercise or enjoyment of citizenship."
         }
       },
-      "id": 2
+      "id": 2,
+      "questions": [
+        {
+          "id": 1,
+          "question": "",
+          "answer": ""
+        }
+      ]
     },
     {
       "OLID:OL24777120M": {
@@ -1172,7 +1497,14 @@
           "content": "Looking forward, then, to the life of the State as that which aids support, and combines the efforts of the individual to obtain happiness, Aristotle draws no hard and fast distinction between the spheres of action of Man as individual and Man as citizen. Nor does the division of his discussion into the _Ethics_ and the _Politics_ rest upon any such distinction. The distinction implied is rather between two stages in the life of the civilised man—the stage of preparation for the full life of the adult citizen, and the stage of the actual exercise or enjoyment of citizenship."
         }
       },
-      "id": 3
+      "id": 3,
+      "questions": [
+        {
+          "id": 1,
+          "question": "",
+          "answer": ""
+        }
+      ]
     },
     {
       "OLID:OL26639962M": {
@@ -1635,7 +1967,14 @@
           "content": "Looking forward, then, to the life of the State as that which aids support, and combines the efforts of the individual to obtain happiness, Aristotle draws no hard and fast distinction between the spheres of action of Man as individual and Man as citizen. Nor does the division of his discussion into the _Ethics_ and the _Politics_ rest upon any such distinction. The distinction implied is rather between two stages in the life of the civilised man—the stage of preparation for the full life of the adult citizen, and the stage of the actual exercise or enjoyment of citizenship."
         }
       },
-      "id": 4
+      "id": 4,
+      "questions": [
+        {
+          "id": 1,
+          "question": "",
+          "answer": ""
+        }
+      ]
     },
     {
       "OLID:OL39222415M": {
@@ -2172,7 +2511,14 @@
           "content": "Looking forward, then, to the life of the State as that which aids support, and combines the efforts of the individual to obtain happiness, Aristotle draws no hard and fast distinction between the spheres of action of Man as individual and Man as citizen. Nor does the division of his discussion into the _Ethics_ and the _Politics_ rest upon any such distinction. The distinction implied is rather between two stages in the life of the civilised man—the stage of preparation for the full life of the adult citizen, and the stage of the actual exercise or enjoyment of citizenship."
         }
       },
-      "id": 5
+      "id": 5,
+      "questions": [
+        {
+          "id": 1,
+          "question": "",
+          "answer": ""
+        }
+      ]
     }
   ],
   "eng202": [
@@ -2484,7 +2830,14 @@
           "content": "Looking forward, then, to the life of the State as that which aids support, and combines the efforts of the individual to obtain happiness, Aristotle draws no hard and fast distinction between the spheres of action of Man as individual and Man as citizen. Nor does the division of his discussion into the _Ethics_ and the _Politics_ rest upon any such distinction. The distinction implied is rather between two stages in the life of the civilised man—the stage of preparation for the full life of the adult citizen, and the stage of the actual exercise or enjoyment of citizenship."
         }
       },
-      "id": 1
+      "id": 1,
+      "questions": [
+        {
+          "id": 1,
+          "question": "",
+          "answer": ""
+        }
+      ]
     },
     {
       "OLID:OL32838419M": {
@@ -2752,7 +3105,7 @@
         "cover": {
           "small": "https://covers.openlibrary.org/b/id/11471392-S.jpg",
           "medium": "https://covers.openlibrary.org/b/id/11471392-M.jpg",
-          "large": "https://covers.openlibrary.org/b/id/11471392-L.jpg"
+          "large": "https://i0.wp.com/images-na.ssl-images-amazon.com/images/I/41fMw0rs7EL.jpg?w=640&ssl=1"
         }
       },
       "chapters": {
@@ -2777,7 +3130,14 @@
           "content": "Looking forward, then, to the life of the State as that which aids support, and combines the efforts of the individual to obtain happiness, Aristotle draws no hard and fast distinction between the spheres of action of Man as individual and Man as citizen. Nor does the division of his discussion into the _Ethics_ and the _Politics_ rest upon any such distinction. The distinction implied is rather between two stages in the life of the civilised man—the stage of preparation for the full life of the adult citizen, and the stage of the actual exercise or enjoyment of citizenship."
         }
       },
-      "id": 2
+      "id": 2,
+      "questions": [
+        {
+          "id": 1,
+          "question": "",
+          "answer": ""
+        }
+      ]
     },
     {
       "OLID:OL26491056M": {
@@ -3156,7 +3516,14 @@
           "content": "Looking forward, then, to the life of the State as that which aids support, and combines the efforts of the individual to obtain happiness, Aristotle draws no hard and fast distinction between the spheres of action of Man as individual and Man as citizen. Nor does the division of his discussion into the _Ethics_ and the _Politics_ rest upon any such distinction. The distinction implied is rather between two stages in the life of the civilised man—the stage of preparation for the full life of the adult citizen, and the stage of the actual exercise or enjoyment of citizenship."
         }
       },
-      "id": 3
+      "id": 3,
+      "questions": [
+        {
+          "id": 1,
+          "question": "",
+          "answer": ""
+        }
+      ]
     },
     {
       "OLID:OL32238679M": {
@@ -4301,7 +4668,14 @@
           "content": "Looking forward, then, to the life of the State as that which aids support, and combines the efforts of the individual to obtain happiness, Aristotle draws no hard and fast distinction between the spheres of action of Man as individual and Man as citizen. Nor does the division of his discussion into the _Ethics_ and the _Politics_ rest upon any such distinction. The distinction implied is rather between two stages in the life of the civilised man—the stage of preparation for the full life of the adult citizen, and the stage of the actual exercise or enjoyment of citizenship."
         }
       },
-      "id": 4
+      "id": 4,
+      "questions": [
+        {
+          "id": 1,
+          "question": "",
+          "answer": ""
+        }
+      ]
     },
     {
       "OLID:OL6514878M": {
@@ -4499,7 +4873,14 @@
           "content": "Looking forward, then, to the life of the State as that which aids support, and combines the efforts of the individual to obtain happiness, Aristotle draws no hard and fast distinction between the spheres of action of Man as individual and Man as citizen. Nor does the division of his discussion into the _Ethics_ and the _Politics_ rest upon any such distinction. The distinction implied is rather between two stages in the life of the civilised man—the stage of preparation for the full life of the adult citizen, and the stage of the actual exercise or enjoyment of citizenship."
         }
       },
-      "id": 5
+      "id": 5,
+      "questions": [
+        {
+          "id": 1,
+          "question": "",
+          "answer": ""
+        }
+      ]
     }
   ],
   "eng303": [
@@ -4828,7 +5209,14 @@
           "content": "Looking forward, then, to the life of the State as that which aids support, and combines the efforts of the individual to obtain happiness, Aristotle draws no hard and fast distinction between the spheres of action of Man as individual and Man as citizen. Nor does the division of his discussion into the _Ethics_ and the _Politics_ rest upon any such distinction. The distinction implied is rather between two stages in the life of the civilised man—the stage of preparation for the full life of the adult citizen, and the stage of the actual exercise or enjoyment of citizenship."
         }
       },
-      "id": 1
+      "id": 1,
+      "questions": [
+        {
+          "id": 1,
+          "question": "",
+          "answer": ""
+        }
+      ]
     },
     {
       "OLID:OL30728742M": {
@@ -5238,7 +5626,14 @@
           "content": "Looking forward, then, to the life of the State as that which aids support, and combines the efforts of the individual to obtain happiness, Aristotle draws no hard and fast distinction between the spheres of action of Man as individual and Man as citizen. Nor does the division of his discussion into the _Ethics_ and the _Politics_ rest upon any such distinction. The distinction implied is rather between two stages in the life of the civilised man—the stage of preparation for the full life of the adult citizen, and the stage of the actual exercise or enjoyment of citizenship."
         }
       },
-      "id": 2
+      "id": 2,
+      "questions": [
+        {
+          "id": 1,
+          "question": "",
+          "answer": ""
+        }
+      ]
     },
     {
       "OLID:OL26639962M": {
@@ -5701,7 +6096,14 @@
           "content": "Looking forward, then, to the life of the State as that which aids support, and combines the efforts of the individual to obtain happiness, Aristotle draws no hard and fast distinction between the spheres of action of Man as individual and Man as citizen. Nor does the division of his discussion into the _Ethics_ and the _Politics_ rest upon any such distinction. The distinction implied is rather between two stages in the life of the civilised man—the stage of preparation for the full life of the adult citizen, and the stage of the actual exercise or enjoyment of citizenship."
         }
       },
-      "id": 3
+      "id": 3,
+      "questions": [
+        {
+          "id": 1,
+          "question": "",
+          "answer": ""
+        }
+      ]
     },
     {
       "OLID:OL13983741M": {
@@ -6158,7 +6560,14 @@
           "content": "Looking forward, then, to the life of the State as that which aids support, and combines the efforts of the individual to obtain happiness, Aristotle draws no hard and fast distinction between the spheres of action of Man as individual and Man as citizen. Nor does the division of his discussion into the _Ethics_ and the _Politics_ rest upon any such distinction. The distinction implied is rather between two stages in the life of the civilised man—the stage of preparation for the full life of the adult citizen, and the stage of the actual exercise or enjoyment of citizenship."
         }
       },
-      "id": 4
+      "id": 4,
+      "questions": [
+        {
+          "id": 1,
+          "question": "",
+          "answer": ""
+        }
+      ]
     },
     {
       "OLID:OL16521070M": {
@@ -6529,7 +6938,14 @@
           "content": "Looking forward, then, to the life of the State as that which aids support, and combines the efforts of the individual to obtain happiness, Aristotle draws no hard and fast distinction between the spheres of action of Man as individual and Man as citizen. Nor does the division of his discussion into the _Ethics_ and the _Politics_ rest upon any such distinction. The distinction implied is rather between two stages in the life of the civilised man—the stage of preparation for the full life of the adult citizen, and the stage of the actual exercise or enjoyment of citizenship."
         }
       },
-      "id": 5
+      "id": 5,
+      "questions": [
+        {
+          "id": 1,
+          "question": "",
+          "answer": ""
+        }
+      ]
     }
   ],
   "eng404": [
@@ -6558,11 +6974,25 @@
             "name": "Penguin India"
           }
         ],
+        "publish_places": [
+          {
+            "name": "America"
+          }
+        ],
         "publish_date": "2007",
         "subjects": [
           {
             "name": "Romance literature",
             "url": "https://openlibrary.org/subjects/romance_literature"
+          }
+        ],
+        "ebooks": [
+          {
+            "preview_url": "https://archive.org/details/tokillmockingbir0000unse_b3c1",
+            "availability": "borrow",
+            "formats": {},
+            "borrow_url": "https://openlibrary.org/books/OL37027591M/To_Kill_a_Mockingbird/borrow",
+            "checkedout": false
           }
         ],
         "cover": {
@@ -6593,7 +7023,14 @@
           "content": "Looking forward, then, to the life of the State as that which aids support, and combines the efforts of the individual to obtain happiness, Aristotle draws no hard and fast distinction between the spheres of action of Man as individual and Man as citizen. Nor does the division of his discussion into the _Ethics_ and the _Politics_ rest upon any such distinction. The distinction implied is rather between two stages in the life of the civilised man—the stage of preparation for the full life of the adult citizen, and the stage of the actual exercise or enjoyment of citizenship."
         }
       },
-      "id": 1
+      "id": 1,
+      "questions": [
+        {
+          "id": 1,
+          "question": "",
+          "answer": ""
+        }
+      ]
     },
     {
       "OLID:OL37027591M": {
@@ -6979,7 +7416,14 @@
           "content": "Looking forward, then, to the life of the State as that which aids support, and combines the efforts of the individual to obtain happiness, Aristotle draws no hard and fast distinction between the spheres of action of Man as individual and Man as citizen. Nor does the division of his discussion into the _Ethics_ and the _Politics_ rest upon any such distinction. The distinction implied is rather between two stages in the life of the civilised man—the stage of preparation for the full life of the adult citizen, and the stage of the actual exercise or enjoyment of citizenship."
         }
       },
-      "id": 3
+      "id": 3,
+      "questions": [
+        {
+          "id": 1,
+          "question": "",
+          "answer": ""
+        }
+      ]
     },
     {
       "OLID:OL3693769M": {
@@ -7126,7 +7570,14 @@
           "content": "Looking forward, then, to the life of the State as that which aids support, and combines the efforts of the individual to obtain happiness, Aristotle draws no hard and fast distinction between the spheres of action of Man as individual and Man as citizen. Nor does the division of his discussion into the _Ethics_ and the _Politics_ rest upon any such distinction. The distinction implied is rather between two stages in the life of the civilised man—the stage of preparation for the full life of the adult citizen, and the stage of the actual exercise or enjoyment of citizenship."
         }
       },
-      "id": 4
+      "id": 4,
+      "questions": [
+        {
+          "id": 1,
+          "question": "",
+          "answer": ""
+        }
+      ]
     },
     {
       "OLID:OL24156400M": {
@@ -7208,7 +7659,14 @@
           "content": "Looking forward, then, to the life of the State as that which aids support, and combines the efforts of the individual to obtain happiness, Aristotle draws no hard and fast distinction between the spheres of action of Man as individual and Man as citizen. Nor does the division of his discussion into the _Ethics_ and the _Politics_ rest upon any such distinction. The distinction implied is rather between two stages in the life of the civilised man—the stage of preparation for the full life of the adult citizen, and the stage of the actual exercise or enjoyment of citizenship."
         }
       },
-      "id": 5
+      "id": 5,
+      "questions": [
+        {
+          "id": 1,
+          "question": "",
+          "answer": ""
+        }
+      ]
     },
     {
       "OLID:OL6977704M": {
@@ -7466,7 +7924,14 @@
           "content": "Looking forward, then, to the life of the State as that which aids support, and combines the efforts of the individual to obtain happiness, Aristotle draws no hard and fast distinction between the spheres of action of Man as individual and Man as citizen. Nor does the division of his discussion into the _Ethics_ and the _Politics_ rest upon any such distinction. The distinction implied is rather between two stages in the life of the civilised man—the stage of preparation for the full life of the adult citizen, and the stage of the actual exercise or enjoyment of citizenship."
         }
       },
-      "id": 6
+      "id": 5,
+      "questions": [
+        {
+          "id": 1,
+          "question": "",
+          "answer": ""
+        }
+      ]
     }
   ],
   "eng505": [
@@ -7721,7 +8186,14 @@
           "content": "Looking forward, then, to the life of the State as that which aids support, and combines the efforts of the individual to obtain happiness, Aristotle draws no hard and fast distinction between the spheres of action of Man as individual and Man as citizen. Nor does the division of his discussion into the _Ethics_ and the _Politics_ rest upon any such distinction. The distinction implied is rather between two stages in the life of the civilised man—the stage of preparation for the full life of the adult citizen, and the stage of the actual exercise or enjoyment of citizenship."
         }
       },
-      "id": 1
+      "id": 1,
+      "questions": [
+        {
+          "id": 1,
+          "question": "",
+          "answer": ""
+        }
+      ]
     },
     {
       "OLID:OL39221187M": {
@@ -8100,7 +8572,14 @@
           "content": "Looking forward, then, to the life of the State as that which aids support, and combines the efforts of the individual to obtain happiness, Aristotle draws no hard and fast distinction between the spheres of action of Man as individual and Man as citizen. Nor does the division of his discussion into the _Ethics_ and the _Politics_ rest upon any such distinction. The distinction implied is rather between two stages in the life of the civilised man—the stage of preparation for the full life of the adult citizen, and the stage of the actual exercise or enjoyment of citizenship."
         }
       },
-      "id": 2
+      "id": 2,
+      "questions": [
+        {
+          "id": 1,
+          "question": "",
+          "answer": ""
+        }
+      ]
     },
     {
       "OLID:OL26238737M": {
@@ -8493,7 +8972,14 @@
           "content": "Looking forward, then, to the life of the State as that which aids support, and combines the efforts of the individual to obtain happiness, Aristotle draws no hard and fast distinction between the spheres of action of Man as individual and Man as citizen. Nor does the division of his discussion into the _Ethics_ and the _Politics_ rest upon any such distinction. The distinction implied is rather between two stages in the life of the civilised man—the stage of preparation for the full life of the adult citizen, and the stage of the actual exercise or enjoyment of citizenship."
         }
       },
-      "id": 3
+      "id": 3,
+      "questions": [
+        {
+          "id": 1,
+          "question": "",
+          "answer": ""
+        }
+      ]
     },
     {
       "OLID:OL9317140M": {
@@ -8672,7 +9158,14 @@
           "content": "Looking forward, then, to the life of the State as that which aids support, and combines the efforts of the individual to obtain happiness, Aristotle draws no hard and fast distinction between the spheres of action of Man as individual and Man as citizen. Nor does the division of his discussion into the _Ethics_ and the _Politics_ rest upon any such distinction. The distinction implied is rather between two stages in the life of the civilised man—the stage of preparation for the full life of the adult citizen, and the stage of the actual exercise or enjoyment of citizenship."
         }
       },
-      "id": 4
+      "id": 4,
+      "questions": [
+        {
+          "id": 1,
+          "question": "",
+          "answer": ""
+        }
+      ]
     },
     {
       "OLID:OL25098005M": {
@@ -9342,20 +9835,29 @@
           "content": "Looking forward, then, to the life of the State as that which aids support, and combines the efforts of the individual to obtain happiness, Aristotle draws no hard and fast distinction between the spheres of action of Man as individual and Man as citizen. Nor does the division of his discussion into the _Ethics_ and the _Politics_ rest upon any such distinction. The distinction implied is rather between two stages in the life of the civilised man—the stage of preparation for the full life of the adult citizen, and the stage of the actual exercise or enjoyment of citizenship."
         }
       },
-      "id": 5
+      "id": 5,
+      "questions": [
+        {
+          "id": 1,
+          "question": "",
+          "answer": ""
+        }
+      ]
     }
   ],
   "login": [
     {
-      "username": "reereer",
-      "password": "wererw",
-      "role": "student",
+      "username": "bambam320",
+      "password": "p",
+      "passwordAuth": "p",
+      "role": "professor",
       "id": 1
     },
     {
-      "username": "erferferf",
-      "password": "erferferf",
-      "role": "professor",
+      "username": "bambam320",
+      "password": "s",
+      "passwordAuth": "s",
+      "role": "student",
       "id": 2
     }
   ]

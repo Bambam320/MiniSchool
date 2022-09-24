@@ -52,7 +52,7 @@ function FacultyCards() {
   //puts the new question on the server in the matching book
   function handleSubmit (e) {
     e.preventDefault()
-    const questionId = book.questions.length + 2
+    const questionId = book.questions.length + 1
     const questions = book.questions.push({id: questionId, question: formValues, answer: ''})
     const putBook = Object.assign(book, questions)
     console.log(questionId)
