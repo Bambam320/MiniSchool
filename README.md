@@ -376,9 +376,8 @@ setFormValues(defaultValues)
 
 ## Video-Describing-Functionality
 
-  
-
-[![Watch the video](https://imgur.com/a/Ifi6mgf)](https://youtu.be/093kWJALBUU)
+    
+   [![Watch the video](https://i.imgur.com/EolkAcU.png)](https://youtu.be/093kWJALBUU)
 
   
 
