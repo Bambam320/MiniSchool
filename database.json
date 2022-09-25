@@ -1973,6 +1973,11 @@
           "id": 1,
           "question": "",
           "answer": ""
+        },
+        {
+          "id": 2,
+          "question": "Which city was best?",
+          "answer": ""
         }
       ]
     },
@@ -3141,6 +3146,56 @@
           "id": 2,
           "question": "this question needs an answer",
           "answer": "ill answer it then"
+        },
+        {
+          "id": 3,
+          "question": "What is the ultimate question?",
+          "answer": "The restaurant at the end of the galaxy."
+        },
+        {
+          "id": 4,
+          "question": "Where are we eating?",
+          "answer": "The restaurant at the end of the universe."
+        },
+        {
+          "id": 5,
+          "question": "Where are we eating?",
+          "answer": ""
+        },
+        {
+          "id": 6,
+          "question": "What is the ultimate question?",
+          "answer": ""
+        },
+        {
+          "id": 7,
+          "question": "What is the ultimate question?",
+          "answer": ""
+        },
+        {
+          "id": 8,
+          "question": "What is the answer to the ultimate question?",
+          "answer": ""
+        },
+        {
+          "id": 9,
+          "question": "What is the answer to the ultimate question?",
+          "answer": ""
+        },
+        {
+          "id": 10,
+          "question": "Where are we eating?",
+          "answer": ""
+        },
+        {
+          "id": 11,
+          "question": "Where are we eating?",
+          "answer": ""
+        },
+        {
+          "id": 12,
+          "question": "Where are we eating?",
+          "answer": ""
         }
       ]
     },
@@ -9856,6 +9911,11 @@
           "id": 1,
           "question": "",
           "answer": ""
+        },
+        {
+          "id": 2,
+          "question": "Name 3 main characters from the book.",
+          "answer": ""
         }
       ]
     }
@@ -9916,6 +9976,13 @@
       "passwordAuth": "teacher",
       "role": "professor",
       "id": 8
+    },
+    {
+      "username": "account_teacher",
+      "password": "p",
+      "passwordAuth": "p",
+      "role": "professor",
+      "id": 9
     }
   ]
 }

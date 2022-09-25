@@ -56,7 +56,7 @@ function Signup () {
     });
   };
 
-  //post user login info if calid to server if valid, dialog open if invalid
+  //post user login info to server if valid, dialog open if invalid
   const handleSignupSubmit = (event) => {
     event.preventDefault();
     const post = {
