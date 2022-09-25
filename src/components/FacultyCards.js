@@ -12,7 +12,7 @@ import Button from '@material-ui/core/Button';
 import { Snackbar } from '@material-ui/core';
 
 function FacultyCards() {
-  //assigning state with the current question input
+  //assigning state with the current question text input
   const [formValues, setFormValues] = useState('')
   //assigning state with the selected book
   const [book, setBook] = useState({})
