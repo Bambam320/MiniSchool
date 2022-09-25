@@ -92,7 +92,7 @@ function postListings(listings) {
 
 ![](images/Joke_cards.png "Joke Cards")
 
-#### Each joke card is listed by the jokeListBuilder() function. You can find it in the index.js file. The function is divided into 3 parts. The first part, creates elements that the joke card will use such as buttons and paragraphs. The second part, fills and changes the text contents, id's and classes of those elements created in the first part. The last part depicted below, is used to append the correct elements based on the joke type. Jokes retrieved from the local json server will include a delete button while jokes retrieved from the API will not include one. Jokes that are presented with a question and answer are considered two part jokes and require the extra text element.
+#### Each joke card is listed by the jokeListBuilder() function. You can find it in the index.js file. The function is divided into 3 parts. The first part, creates elements that the joke card will use such as buttons and paragraphs. The second part, fills and changes the text contents, id's and classes of those elements created in the first part. The last part depicted below, is used to append the correct elements basefurfneriftrieved from the API will not include one. Jokes that are presented with a question and answer are considered two part jokes and require the extra text element.
 
 ```js
 switch(true) {
