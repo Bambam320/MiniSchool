@@ -9,17 +9,24 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import Snackbar from '@material-ui/core/Snackbar';
 
 function StudentCards() {
-  //assigning state and parameters
+  //assigning state with the answer
   const [formValues, setFormValues] = useState('')
+  //assigning state with the book used to display the card
   const [book, setBook] = useState({})
+  //assigning state with true if there is a valid book selected
   const [bookValid, setBookValid] = useState(false)
+  //assigning state with true if show a question was clicked
   const [showQuestion, setShowQuestion] = useState(false)
+  //assigning state with the current question listed
   const [question, setQuestion] = useState('')
+  //assigning state with snackbar show logic
+  const [snackOpen, setSnackOpen] = useState(false)
   const params = useParams()
 
-  //assigning global variables
+  //assigning function variables
   const host = `http://localhost:3001/`
   const course = params.course
   const id = params.jsonId
@@ -50,6 +57,8 @@ function StudentCards() {
     setFormValues(e.target.value)
   }
 
+  console.log(book.questions)
+
   //patches the answer on the server to the matching books matching question
   function handleSubmit(e) {
     e.preventDefault()
@@ -57,19 +66,25 @@ function StudentCards() {
     let answeredQuestion = book.questions.find((ques) => ques.question === question)
     answeredQuestion["answer"] = formValues
     console.log('question from book that was displayed', answeredQuestion['id'])
+    let newQuestions = book.questions.map((question) => {
+      if (question.id === answeredQuestion.id) {
+        return answeredQuestion
+      } else return question
+    })
     const patch = {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        questions: [...book.questions].push(answeredQuestion)
+        questions: newQuestions
       })
     } 
     fetch(`${host}${course}/${id}`, patch)
       .then((r) => r.json())
       .then(() => setFormValues(''));
     setShowQuestion(false)
+    setSnackOpen(true)
   }
   
 
@@ -100,6 +115,10 @@ function StudentCards() {
     }
     setQuestion(ques === undefined ? 'All asiggnments have been completed for this book' : ques.question)
     setShowQuestion(true)
+  }
+
+  function handleSnackClose () {
+    setSnackOpen(false)
   }
 
   //returns a card and form for each book to answer questions from the json server with.
@@ -145,6 +164,12 @@ function StudentCards() {
           </form>
         </CardContent>
       </Card>
+      <Snackbar
+        open={snackOpen}
+        autoHideDuration={4000}
+        onClose={handleSnackClose}
+        message={`Your answers have been submitted for review.`}
+      />
     </Container>
   )
 }

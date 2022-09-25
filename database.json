@@ -3140,7 +3140,7 @@
         {
           "id": 2,
           "question": "this question needs an answer",
-          "answer": ""
+          "answer": "ill answer it then"
         }
       ]
     },
@@ -7427,6 +7427,16 @@
           "id": 1,
           "question": "",
           "answer": ""
+        },
+        {
+          "id": 2,
+          "question": "How difficult is it to kill a mockingbird?",
+          "answer": "impossible"
+        },
+        {
+          "id": 3,
+          "question": "who was Harper Lee",
+          "answer": "she was an author duh"
         }
       ]
     },
@@ -9864,6 +9874,20 @@
       "passwordAuth": "s",
       "role": "student",
       "id": 2
+    },
+    {
+      "username": "student",
+      "password": "stu",
+      "passwordAuth": "stu",
+      "role": "student",
+      "id": 3
+    },
+    {
+      "username": "prof",
+      "password": "pro",
+      "passwordAuth": "pro",
+      "role": "professor",
+      "id": 4
     }
   ]
 }

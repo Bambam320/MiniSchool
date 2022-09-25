@@ -9,12 +9,17 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import { Snackbar } from '@material-ui/core';
 
 function FacultyCards() {
-  //assigning state and parameters
+  //assigning state with the current question input
   const [formValues, setFormValues] = useState('')
+  //assigning state with the selected book
   const [book, setBook] = useState({})
+  //assigning state with a boolean to indicate if a valid book object exists while displaying a card
   const [bookValid, setBookValid] = useState(false)
+  //assigning state with the snackbar handler
+  const [snackOpen, setSnackOpen] = useState(false)
   const params = useParams()
 
   //assigning global variables
@@ -62,6 +67,7 @@ function FacultyCards() {
     fetch(`http://localhost:3001/${course}/${id}`, put)
       .then((r) => r.json())
       .then((data) => clearForm(data))
+    setSnackOpen(true)
   }
 
   //from handleSubmit: clears the question input form
@@ -78,6 +84,11 @@ function FacultyCards() {
       case bookValid && props === 4: return book[`${bookId}`].publish_date
       default: return 'Loading...'
     }
+  }
+
+  //set snackbar state handler to close
+  function handleSnackClose() {
+    setSnackOpen(false)
   }
 
   //returns a card and form for each book to add questions to the json server with.
@@ -119,6 +130,12 @@ function FacultyCards() {
           </form>
         </CardContent>
       </Card>
+      <Snackbar
+        open={snackOpen}
+        autoHideDuration={4000}
+        onClose={handleSnackClose}
+        message={`Your question has been assigned to this book.`}
+      />
     </Container>
   )
 }

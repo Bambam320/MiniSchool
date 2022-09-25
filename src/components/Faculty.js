@@ -59,7 +59,7 @@ function Faculty() {
             <Route path=":course/:bookId/:jsonId" element={<FacultyCards />} />
           </Routes>
         </Container>
-        : currentUser && currentUser.role === 'student' ? <h3>Get out of here, you're not a Teacher!</h3> : <h3>Please login to view this content!</h3>}
+        : currentUser && currentUser.role === 'student' ? <h3 style={{marginTop: '100px'}}>Get out of here, you're here to learn!</h3> : <h3 style={{marginTop: '100px'}}>Please login to view this content!</h3>}
     </>
   )
 }
