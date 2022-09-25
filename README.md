@@ -1,7 +1,5 @@
 
-# Joke Search App
-
-  
+# University Project
 
 This is a single page application that allows the user to look at a random selection of books available in the courses offered at the mini-school from the home page. There is functionality which allows creating an account with a teacher or student role as well as a login page to change the users rights. There are two components, one for faculty members and one for students, that allows the user to display all books in all courses. The faculty members can assign questions to each book and the students can answer all assignments assigned to a book.
   
@@ -90,7 +88,7 @@ Index from src folder
 	├── Login
     └── Signup
 ```
-
+**Home Page**
 ![](images/Homepage.png  "Home Page Example")
 
 ####The following components are responsible for the Home page. Although NavBar and its child is available on every page of the SPA.
@@ -159,10 +157,39 @@ const  listBooks = cards.map((card, i) => {
     </Grid>
   })
 ```
+**Faculty page**
+![](images/Faculty.png  "Faculty Page Example")
+####The next main branch of components begins with Faculty, rendered when path matches "/faculty", it returns a list in a main container that calls ```{listCourses}``` . That will render a FacultyCourses component for each course available on the server which is displayed as an expandable item in a list. Then FacultyCourses will call FacultyCoursesExpanded which displays a list item for each book in that course.
 
 
-
+```js
+return (
+  <>
+  {currentUser && currentUser.role === 'professor' ?
+    <Container  style={{ marginTop:  '100px', marginBottom:  '100px' }}>
+      <List
+        component="nav"
+        aria-labelledby="nested-list-subheader"
+        subheader={
+          <ListSubheader  component="div"  id="nested-list-subheader">
+            Your courses!
+          </ListSubheader>
+        }
+        className={classes.root}
+      >
+      {listCourses}
+      </List>
+      <Routes>
+        <Route  path=":course/:bookId/:jsonId"  element={<FacultyCards  />}  />
+      </Routes>
+    </Container>
+  : currentUser && currentUser.role === 'student' ? 
+  <h3  style={{ marginTop:  '100px' }}>Get out of here, you're here to learn!</h3> : 
+  <h3  style={{ marginTop:  '100px' }}>Please login to view this content!</h3>}
+  </>
+)
 ```
+###The 
 
   
 
@@ -186,11 +213,11 @@ const  listBooks = cards.map((card, i) => {
 
   
 
-![](https://media.giphy.com/media/iEVHoQiil5rvuyAF43/giphy.gif)
+![](https://media.giphy.com/media/rxZyUNxOXo4931Kz0m/giphy.gif)
 
   
 
-***Searching and Saving***
+***Home page - Random display of books upon render***
 
   
 
