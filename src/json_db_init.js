@@ -9859,6 +9859,55 @@
       "passwordAuth": "s",
       "role": "student",
       "id": 2
+    },
+    {
+      "username": "student",
+      "password": "stu",
+      "passwordAuth": "stu",
+      "role": "student",
+      "id": 3
+    },
+    {
+      "username": "prof",
+      "password": "pro",
+      "passwordAuth": "pro",
+      "role": "professor",
+      "id": 4
+    },
+    {
+      "username": "account_student",
+      "password": "s",
+      "passwordAuth": "s",
+      "role": "student",
+      "id": 5
+    },
+    {
+      "username": "Teacher",
+      "password": "teacher",
+      "passwordAuth": "teacher",
+      "role": "professor",
+      "id": 6
+    },
+    {
+      "username": "Teacher",
+      "password": "teacher",
+      "passwordAuth": "teacher",
+      "role": "professor",
+      "id": 7
+    },
+    {
+      "username": "Teacher",
+      "password": "teacher",
+      "passwordAuth": "teacher",
+      "role": "professor",
+      "id": 8
+    },
+    {
+      "username": "account_teacher",
+      "password": "p",
+      "passwordAuth": "p",
+      "role": "professor",
+      "id": 9
     }
   ]
 }
