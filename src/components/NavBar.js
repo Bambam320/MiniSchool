@@ -15,6 +15,7 @@ import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 
 function NavBar() {
 
+  //holds NavBar on top during scroll
   function ElevationScroll(props) {
     const { children } = props;
     const trigger = useScrollTrigger({
@@ -31,8 +32,9 @@ function NavBar() {
       <CssBaseline />
       <ElevationScroll>
         <AppBar>
-          <Toolbar style={{color: '#659DBD'}}>
+          <Toolbar style={{ color: '#659DBD' }}>
             <Typography variant="h6" component="div">
+              {/* Calls components to list links and a text showing the logged in user */}
               <NavBarLinks />
               <LoggedIn />
             </Typography>

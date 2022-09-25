@@ -405,6 +405,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
 
 ## Badges
 
-  
-
 ![](https://img.shields.io/github/commit-activity/w/Bambam320/phase-2-miniSchool-project)
