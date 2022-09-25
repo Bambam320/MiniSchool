@@ -59,7 +59,7 @@ It is accessible through a local browser and the data is established on a local 
 ```js
 npm run server
 ```
-Now you're ready to learn or teach.
+Now you're ready to learn or teach at an english program in a made up school.
 
 Clone the repo [from Github here](https://github.com/Bambam320/phase-2-miniSchool-project)
 
@@ -67,267 +67,100 @@ Clone the repo [from Github here](https://github.com/Bambam320/phase-2-miniSchoo
 
 ## Usage
 
-  
-
 The SPA's functions are described below with imagery and code to best demonstrate their use.
 
-  
+**SPA Component Tree**
 
-**Joke Search Menu**
-
-  
-
-![](images/Search_menu.png  "Search Menu")
-
-  
-
-#### The anonymous function below is a small part of the code used to take the users selection. It searches for the list of check boxes with the class name of category and returns an array of those check boxes. That array is reduced by only those checkboxes that are checked and an array of strings for those selected categories is provided. The ternary operator at the bottom is used to replace the last comma with a question mark. See the next snippet of code for an explanation of why that is.
-
-  
-
-```js
-
-const  category = function() {
-
-let  categorySelections = Object.entries(document.getElementsByName('category'))
-
-let  selectedCategories = categorySelections.reduce(function(accum, val) {
-
-return  accum += val[1].checked === true ? `${val[1].id},` : ''
-
-}, '')
-
-return  selectedCategories != '' ? `${selectedCategories.slice(0,-1)}?` : selectedCategories
-
-}
-
+#### The component tree includes an index file that attaches the react app to the DOM. Then an "App" component provides context and routing for all children elements. The first is a "NavBar" component that lists links and is parent to the "LogginIn" component. The second is the "Home" component which displays the main page and calls the "HomeCard" child which lists a card for each book provided to it. The third is the "Faculty" component which displays a menu handled by its children, "FacultyCourses" and "FacultyCoursesExpanded". "FactoryCards" is a component from a nested route which lists the book information selected. The "Student" component and its children work in the same way. The fifth component is Login which takes user input information and loads it to the context used by the entire SPA. The sixth component, "Signup" is available through a nested link in "Login" and takes in the users information.
+```
+Index from src folder
+└── App from component folder
+    ├── NavBar
+	|   └── LoggedIn
+	├── Home
+	|   └── HomeCard
+    ├── Faculty
+	|   ├── FacultyCards
+    |   |   FacultyCourses
+    |   └── FacultyCoursesExpanded
+    ├── Student
+    |   ├── StudentCards
+    |   |   StudentCourses
+    |   └── StudentCoursesExpanded
+	├── Login
+    └── Signup
 ```
 
-  
+![](images/Homepage.png  "Home Page Example")
 
-#### The fetch API uses string interpolation to grab the strings returned from the variables for category, style etc. in the URL to build the correct address for requesting jokes. The data returned by the promise is then sent to a function for listing a single joke or several jokes.
-
-  
-
-```js
-
-fetch(`${jokeServer}${category() === '' ? 'Any?' : category()}${flags()}${style()}${searchText != '' ? searchField : ''}${amount}`)
-
-.then(res  =>  res.json())
-
-.then(data  =>  amount.charAt(7) === '1' ? postListing(data) : postListings(data.jokes))
-
-.catch(error  =>  alert(error.message))
-
+####The following components are responsible for the Home page. Although NavBar and its child is available on every page of the SPA.
+```
+Index from src folder
+└── App from component folder
+    ├── NavBar
+	|   └── LoggedIn
+	├── Home
+	|   └── HomeCard
 ```
 
-  
-
-#### The necessity for two separate functions for listing jokes comes from the failure case in which no valid jokes are returned. In a single joke search, the key ERROR's value is true. However, in a multiple joke search, the array that is expected is actually undefined. Both functions funnel to the jokeListBuilder() function.
-
-  
+####The App component provides routes to all the other main components in the app. The default path at "/" will display the NavBar component and unless there is a path after the default path, then the Home component will be rendered as well. The NavBar component displays an "AppBar" material component for styling and calls 2 children components, NavBarLinks and LoggedIn. As shown above, there are 4 links returned by the NavBarLinks component. A status message that displays the current users login information and a logout button is returned by the LoggedIn component.
 
 ```js
-
-function  postListing(listing) {
-
-if (listing.error === true) {
-
-return  alert('No Matching Jokes Found')
-
-} else  if(listing.error === false || listing.id != NaN) {
-
-jokeListBuilder(listing)
-
+function  App() {
+//provides context to and route to entire app
+  return (
+    <LoggedUserContext.Provider  value={{ currentUser, setCurrentUser }}>
+      <div  style={{ background:  'radial-gradient(#ffe6cc, #fff2e6)' }}>
+		<Routes>
+			{/* sets "/" to default with NavBar component and indexes home to it */}
+	      <Route  path="/"  element={<NavBar  />}>
+			<Route  index  element={<Home  />}  />
+		    <Route  path="faculty/*"  element={<Faculty  />}  /> //root for faculty tree
+			<Route  path="student/*"  element={<Student  />}  />
+			{/* <Route path="explore" element={<Explore />} /> */}
+			<Route  path="login"  element={<Login  />}  />
+			<Route  path="signup"  element={<Signup  />}  />
+		  </Route>
+		</Routes>
+	  </div>
+	</LoggedUserContext.Provider>
+  )
 }
-
-}
-
-function  postListings(listings) {
-
-if (listings === undefined) {
-
-return  alert('No Matching Jokes Found')
-
-} else {
-
-for (const  listing  of  listings) {
-
-postListing(listing)
-
-}
-
-}
-
-}
-
 ```
 
-  
-
-*Joke Search Menu*
-
-  
-
-![](images/Joke_cards.png  "Joke Cards")
-
-  
-
-#### Each joke card is listed by the jokeListBuilder() function. You can find it in the index.js file. The function is divided into 3 parts. The first part, creates elements that the joke card will use such as buttons and paragraphs. The second part, fills and changes the text contents, id's and classes of those elements created in the first part. The last part depicted below, is used to append the correct elements based on the joke type. Jokes retrieved from the local json server will include a delete button while jokes retrieved from the API will not include one. Jokes that are presented with a question and answer are considered two part jokes and require the extra text element.
-
-  
+####The Home component uses the effect hook to build an array where it grabs a random book from each course passed to the forEach() method used. That book array is then used to render the HomeCard component.
 
 ```js
+const  eng101 = ['OL4444289M', 'OL32520899M', 'OL24777120M', 'OL26639962M', 'OL39222415M']
+const  courses = ["eng101", "eng202", "eng303", "eng404", "eng505"]
+/Grab a random book from each course and push it to an array which sets the card state
+useEffect(() => {
+  const  host = `http://localhost:3001/`
+  let  bookarray = []
+  courses.forEach((course) => {
+    fetch(`${host}${course}`)
+      .then((r) =>  r.json())
+      .then((data) => {
+        bookarray.push(data[Math.ceil(Math.random() * 4)])
+        if (bookarray.length === 5) {
+          return  setCardState(bookarray, course)
+        }
+      })
+  })
+}, [])
+```
+####The Homecard component is called for each card in the array. Then Homecard uses several variables and the Card and Typography components from Material ui to display the information provided.
 
-switch(true) {
-
-case  listing.type === 'single' && listing.local === undefined:
-
-jokeContainer.append(joke, category, id, flags, saveButton, removeButton)
-
-break;
-
-case  listing.type === 'twopart' && listing.local === undefined:
-
-jokeContainer.append(setup, lineBreak, delivery, category, id, flags, saveButton, removeButton)
-
-break;
-
-case  listing.type === 'single' && listing.local === true:
-
-jokeContainer.append(joke, category, id, flags, saveButton, removeButton, deleteButton)
-
-break;
-
-case  listing.type === 'twopart' && listing.local === true:
-
-jokeContainer.append(setup, lineBreak, delivery, category, id, flags, saveButton, removeButton, deleteButton)
-
-break;
-
-}
-
+```js
+const  listBooks = cards.map((card, i) => {
+  return (card ?
+    <Grid  item={4}>
+      <Homecard  key={i}  card={card}  />
+    </Grid>
+  })
 ```
 
-  
 
-![](images/Favorite_buttons.png  "Action Buttons")
-
-  
-
-#### There are several functions between lines 128 and 169 of the index.js file which handle the removal and deletion of jokes from the SPA and the json server. They are straight forward and the function depicted below is used to delete all jokes from the local server. The event listener prevents refreshing of the page and fetches with a get method, the jokes from the local json server. It then passes the data from the server to the deleteAllJokes() function which iterates over each joke and uses the delete method on each one. Then it returns an alert letting the user know all jokes have been deleted.
-
-  
-
-```js
-
-document.querySelector('#delete_all_saved_jokes').addEventListener('click', (e) => {
-
-e.preventDefault()
-
-fetch('http://localhost:3000/Favorites')
-
-.then(res  =>  res.json())
-
-.then(data  =>  deleteAllJokes(data))
-
-})
-
-function  deleteAllJokes(jokes) {
-
-for (const  joke  of  jokes) {
-
-fetch(`http://localhost:3000/Favorites/${joke.id}`, {method:  'DELETE'})
-
-.then(res  =>  res.json())
-
-}
-
-alert('All jokes have been deleted from the favorites folder!')
-
-}
-
-```
-
-  
-
-#### The event listener below is used to save all jokes currently listed on the SPA to the local server. It retrieves all current jokes on the SPA and checks if there are any. If there are, a fetch API gets the current jokes saved in the local server and iterates over each joke on the SPA. For each joke, its ID is compared to all the id's on the server and if none are found, the save button of that joke has a click event simulated on it, passing it to a saveThisJoke() function which uses a fetch API with a post method to save jokes to the local server.
-
-  
-
-```js
-
-document.querySelector('#save_all_jokes').addEventListener('click', (e) => {
-
-e.preventDefault()
-
-let  jokeCollection = document.getElementsByClassName('joke-card')
-
-if (jokeCollection.length === 0) {
-
-alert('There are no jokes listed to be saved.')
-
-} else {
-
-fetch('http://localhost:3000/Favorites')
-
-.then(res  =>  res.json())
-
-.then(data  => {
-
-for (const  joke  of  jokeCollection) {
-
-const  found = data.find(ele  =>  joke.querySelector('.jokeID').id === ele.id)
-
-if (found === undefined) {
-
-joke.querySelector('#save_button').click()
-
-} else {
-
-alert(`The joke with ID : ${joke.querySelector('.jokeID').id} has already been saved`)
-
-}
-
-}
-
-})
-
-}
-
-})
-
-```
-
-  
-
-#### The favorites button has an event listener attached to it. It fetches the jokes from the local server and passes that data to the listFavorites() function. It checks the length of data and determines if there are any jokes saved to the local server. If there are, it iterates over the joke id's stored on the local server and fetches each joke from the joke API and passes that joke to the modeifyAndPostListing() function which adds a key value pair to the joke and passes it back to the jokeListBuilder() function. That key adds a value which lets the function know it's a local joke and needs the button to delete it from the local server added to it's jokecard.
-
-  
-
-```js
-
-function  listFavorites(jokes) {
-
-if (jokes.length === 0) {
-
-alert('No jokes are stored in the Favorites Folder')
-
-} else {
-
-for (const  joke  of  jokes) {
-
-fetch(`https://v2.jokeapi.dev/joke/Any?idRange=${joke.joke_id}`)
-
-.then(res  =>  res.json())
-
-.then(data  =>  modifyAndPostListing(data))
-
-}
-
-}
-
-}
 
 ```
 
@@ -379,15 +212,9 @@ fetch(`https://v2.jokeapi.dev/joke/Any?idRange=${joke.joke_id}`)
 
 ## Credits
 
-  
-
 This project uses the free API from [openLibrary](https://openlibrary.org/developers)
 
-  
-
 ## License
-
-  
 
 MIT License
 Copyright (c) 2022 Igor M.  
@@ -404,5 +231,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
   
 
 ## Badges
+
+  
 
 ![](https://img.shields.io/github/commit-activity/w/Bambam320/phase-2-miniSchool-project)
