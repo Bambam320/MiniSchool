@@ -12,6 +12,7 @@ import Explore from './Explore';
 import Login from './Login';
 import Signup from './Signup';
 import NavBar from './NavBar';
+import StudentCards from './StudentCards';
 
 function App() {
   const [currentUser, setCurrentUser] = useState('')

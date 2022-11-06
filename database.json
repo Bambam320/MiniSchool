@@ -5637,6 +5637,11 @@
           "id": 1,
           "question": "",
           "answer": ""
+        },
+        {
+          "id": 2,
+          "question": "Which one is better pride, or prejudice?",
+          "answer": "Pride probably."
         }
       ]
     },
@@ -9913,6 +9918,13 @@
       "passwordAuth": "p",
       "role": "professor",
       "id": 9
+    },
+    {
+      "username": "teacher",
+      "password": "p",
+      "passwordAuth": "p",
+      "role": "professor",
+      "id": 10
     }
   ]
 }

@@ -41,7 +41,7 @@ function Student() {
   //returns container holding menu of courses and book card via a route
   return (
     <>
-      {currentUser && currentUser.role === 'student' ?
+      {/* {currentUser && currentUser.role === 'student' ? */}
         <Container style={{ marginTop: '100px', marginBottom: '100px' }}>
           <List
             component="nav"
@@ -59,7 +59,7 @@ function Student() {
             <Route path=":course/:bookId/:jsonId" element={<StudentCards />} />
           </Routes>
         </Container>
-        : currentUser && currentUser.role === 'professor' ? <h1 style={{marginTop: '100px'}}>Get out of here, you're here to teach!</h1> : <h1 style={{marginTop: '100px'}}>Please login to view this content!</h1>}
+        {/* // : currentUser && currentUser.role === 'professor' ? <h1 style={{marginTop: '100px'}}>Get out of here, you're here to teach!</h1> : <h1 style={{marginTop: '100px'}}>Please login to view this content!</h1>} */}
     </>
   )
 }

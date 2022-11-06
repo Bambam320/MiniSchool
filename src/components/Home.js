@@ -7,6 +7,7 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import { Typography } from '@material-ui/core';
+import Clickme from './Clickme';
 
 function Home() {
   //create state for the cards listed on the page
@@ -59,6 +60,7 @@ function Home() {
         </Typography>
         <Box >
           <img style={{ height: '600px', width: '100%' }} src='/imgs/Main_Book_Photo.jpg' alt='main book image'></img>
+          <Clickme />
         </Box>
       </Container>
       <Container style={{ marginTop: '15px' }} >

@@ -30,8 +30,7 @@ function StudentCoursesExpanded({bookInfo, course, jsonId}) {
   //returns menu lists which are links for each book in the course, the url passes params later needed
   return (
     <List component="div" disablePadding>
-      <ListItem button component={Link} to={`/student/${course}/${bookId}/${jsonId}`}  
-        className={classes.nested}>
+      <ListItem button component={Link} to={`/student/${course}/${bookId}/${jsonId}`} className={classes.nested}>
         <ListItemIcon>
           <ChromeReaderModeIcon />
         </ListItemIcon>
