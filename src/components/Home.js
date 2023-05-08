@@ -60,7 +60,7 @@ function Home() {
         </Typography>
         <Box >
           <img style={{ height: '600px', width: '100%' }} src='/imgs/Main_Book_Photo.jpg' alt='main book image'></img>
-          <Clickme />
+          {/* <Clickme /> */}
         </Box>
       </Container>
       <Container style={{ marginTop: '15px' }} >
